@@ -1,195 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
 </head>
 <body>
-<h1>Welcome to My Website!</h1>
-<p>Hello! My name is Ella and this is my first website.</p>
-<h2>About Me</h2>
-<p>I am learning web development at the University of York.</p>
-<h2>My Interests</h2>
-<ul>
-<li>Discovering new subjects</li>
-<li>Computer Science</li>
-<li>Technology</li>
-</ul>
-  <p>Visit my <a href="https://www.boredbutton.com/">favourite website</a>!</p>
-    <img src = "https://tenor.com/view/quby-gif-10450862751152685702" width="300" height = "350">
+    <h1 style="color: blue;">Welcome to My Website!</h1>
+    <p>Hello! My name is Ella and this is my first website.</p>
     
-  </script>
-  <h1 style="color: blue;">Welcome to My Website!</h1>
+    <h2>About Me</h2>
+    <p>I am learning web development at the University of York.</p>
+    
+    <h2>My Interests</h2>
+    <ul>
+        <li>Discovering new subjects</li>
+        <li>Computer Science</li>
+        <li>Technology</li>
+    </ul>
+    
+    <p>Visit my <a href="https://www.boredbutton.com/">favourite website</a>!</p>
+    <img src="https://media.tenor.com/quby-gif-10450862751152685702/placeholder.gif" width="300" height="350" alt="Funny gif">
 
-<script>
-// ── Supabase config ─────────────────────────────────────────────
-const SUPABASE_URL = "https://wrovwsqyhdfpiqjzcnlx.supabase.co";
-const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indyb3Z3c3F5aGRmcGlxanpjbmx4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNDcwMTIsImV4cCI6MjA4ODYyMzAxMn0.ph3pRLl4iNE5AjzaHDSkJsCxH1WcLitYejiUTEsme7E";
+    <main>
+        <!-- About section -->
+        <section id="about">
+            <h2>About me</h2>
+            <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
+            <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
+            <p>Outside my studies, I enjoy catching up with the news, learning about things I don't know, and organisation.</p>
+        </section>
 
-// ── Form submission handler ──────────────────────────────────────
-document.getElementById("contact-form").addEventListener("submit", async function (event) {
-    // Prevent the default browser form submission (page reload)
-    event.preventDefault();
+        <!-- Now / Goals section -->
+        <section id="now">
+            <h2>What I am working on now</h2>
+            <p>Right now I am learning SQL for working with databases and practising Java programming to strengthen my understanding of algorithms and data structures.</p>
+            <p>Over the next year I aim to build small web applications that connect a web front end to a real database, so I can practise full-stack development and data handling.</p>
+            <p>I am particularly interested in roles and projects related to data engineering, where I can design efficient systems and work with real-world datasets.</p>
+        </section>
 
-    // Grab the form values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const btn = document.getElementById("submit-btn");
-    const status = document.getElementById("form-status");
+        <section id="blog">
+            <h2>Blog and learning notes</h2>
+            
+            <article>
+                <h3>What is a CPU cache? (short explanation)</h3>
+                <p><strong>Date:</strong> 10 February 2026</p>
+                <p>A CPU cache is a small, very fast type of memory inside the processor. It stores copies of data that the CPU uses often, so the CPU does not have to wait for slower main memory (RAM). This makes programs run faster.</p>
+            </article>
+            
+            <article>
+                <h3>Intro to normalisation in databases</h3>
+                <p><strong>Date:</strong> 10 February 2026</p>
+                <p>Normalisation is the process of organising tables in a database so that each table focuses on one topic and there is minimal duplicated data. This helps keep the data consistent and easier to maintain.</p>
+            </article>
+            
+            <p>I use this section to write short explanations of ideas from computer architecture, databases, and other modules, so I remember them and can show my understanding.</p>
+        </section>
 
-    // Disable the button while we send (prevents double-submit)
-    btn.disabled = true;
-    btn.textContent = "Sending...";
-    status.textContent = "";
+        <section id="skills">
+            <h2>Skills and tools</h2>
+            <p><strong>Programming:</strong> Python (used in coursework projects), Java (first-year assignments)</p>
+            <p><strong>Web and databases:</strong> HTML, CSS, SQL (used to design and query simple databases in class).</p>
+            <p><strong>Tools:</strong> Git, GitHub, VS Code, Linux command line.</p>
+            <p><strong>Teamwork and communication:</strong> Collaborated on group coursework, wrote project reports, and presented solutions to classmates.</p>
+        </section>
 
-    try {
-        // Call the Supabase REST API to insert a row
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "apikey": SUPABASE_ANON,
-                "Authorization": `Bearer ${SUPABASE_ANON}`,
-                "Prefer": "return=minimal"
-            },
-            body: JSON.stringify({ name, email, message })
+        <section id="production-diary">
+            <h2>Production diary – Week 15</h2>
+            <p><strong>Date:</strong> 10 February 2026</p>
+            <p>This week I worked on my GitHub Pages portfolio website. I focused on creating or improving the main sections (About, Projects, Skills, Contact) and setting up my CS Maths & Tools page.</p>
+            <p>I am most happy with learning about the aspects of web design and learning about front end development in my own time. I'm most particularly taken with starting CSS.</p>
+            <p>I found it difficult to add images, and I still can't figure it out. Specifically how to add images via a weblink that is a creative common.</p>
+            <p>Next time I want to improve the layout of my webpage to look more personalised and unique. I want my webpage to be represent me more while maintaining professionalism.</p>
+        
+            <h2>Production diary – Week 16</h2>
+            <p><strong>Date:</strong> 16 February 2026</p>
+            <p>This week I started browsing other people's personal websites in order to take inspiration for my own. It was really interesting learning about the web culture and seeing what fun things people incorporate into their websites</p>
+            <p>This led me to fall down a rabbit hole of collecting blinkies and banners for my website, along with learning about online neighbours and seeing what content is incorporated in people's webpages (example: shrines, guestbooks, diaries...</p>
+            <p>However, because of how creative people are with their websites, this week I've gotten a little lost creative wise, as I no longer know whether I want to develop my website in a way that is appealing for companies</p>
+        
+            <h2>Production diary – Week 17</h2>
+            <p><strong>Date:</strong> 30 February 2026</p>
+            <p>This week I started looking into databases and how to link live databses into my website. I added a feedback form that allows me to recieve emails, names, and messages from anyone interested in my website</p>
+            <p>What I want to improve however, is how I recieve those messages. When someone submits a message on this website, I have to open my thirdparty database host (Supabase) manually and open the table view editor to see any recieved messages. I hope to implement a system that can maybe collect my messages and send it to my email at a set time everyday</p>
+            
+
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form id="contact-form">
+                <div>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+                </div>
+                <div>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Say hello..." rows="5"></textarea>
+                </div>
+                <button type="submit" id="submit-btn">Send Message</button>
+                <p id="form-status"></p>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // ── Supabase config ─────────────────────────────────────────────
+        const SUPABASE_URL = "https://wrovwsqyhdfpiqjzcnlx.supabase.co";
+        const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indyb3Z3c3F5aGRmcGlxanpjbmx4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNDcwMTIsImV4cCI6MjA4ODYyMzAxMn0.ph3pRLl4iNE5AjzaHDSkJsCxH1WcLitYejiUTEsme7E";
+
+        // Wait for the DOM to be fully loaded before adding event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // ── Form submission handler ──────────────────────────────────────
+            document.getElementById("contact-form").addEventListener("submit", async function (event) {
+                // Prevent the default browser form submission (page reload)
+                event.preventDefault();
+
+                // Grab the form values
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+                const btn = document.getElementById("submit-btn");
+                const status = document.getElementById("form-status");
+
+                // Disable the button while we send (prevents double-submit)
+                btn.disabled = true;
+                btn.textContent = "Sending...";
+                status.textContent = "";
+
+                try {
+                    // Call the Supabase REST API to insert a row
+                    const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "apikey": SUPABASE_ANON,
+                            "Authorization": `Bearer ${SUPABASE_ANON}`,
+                            "Prefer": "return=minimal"
+                        },
+                        body: JSON.stringify({ name, email, message })
+                    });
+
+                    if (response.ok) {
+                        // Success — show confirmation and reset the form
+                        status.textContent = "✓ Message sent! I will be in touch soon.";
+                        status.style.color = "#1A7A4A";
+                        event.target.reset();
+                    } else {
+                        // Supabase returned an error — log it for debugging
+                        const err = await response.json();
+                        console.error("Supabase error:", err);
+                        status.textContent = "Something went wrong. Please try again.";
+                        status.style.color = "#DC2626";
+                    }
+                } catch (networkError) {
+                    // Network/connectivity problem
+                    console.error("Network error:", networkError);
+                    status.textContent = "Could not connect. Check your internet connection.";
+                    status.style.color = "#DC2626";
+                } finally {
+                    // Always re-enable the button
+                    btn.disabled = false;
+                    btn.textContent = "Send Message";
+                }
+            });
         });
-
-        if (response.ok) {
-            // Success — show confirmation and reset the form
-            status.textContent = "✓ Message sent! I will be in touch soon.";
-            status.style.color = "#1A7A4A";
-            event.target.reset();
-        } else {
-            // Supabase returned an error — log it for debugging
-            const err = await response.json();
-            console.error("Supabase error:", err);
-            status.textContent = "Something went wrong. Please try again.";
-            status.style.color = "#DC2626";
-        }
-    } catch (networkError) {
-        // Network/connectivity problem
-        console.error("Network error:", networkError);
-        status.textContent = "Could not connect. Check your internet connection.";
-        status.style.color = "#DC2626";
-    } finally {
-        // Always re-enable the button
-        btn.disabled = false;
-        btn.textContent = "Send Message";
-    }
-});
-</script>
+    </script>
 </body>
-
-<main>
-    <!-- About section -->
-  <section id="about">
-    <h2>About me</h2>
-    <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-    <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
-    <p>Outside my studies, I enjoy catching up with the news, learning about things I don't know, and ogranisation.</p>
-  </section>
-
-    <!-- Now / Goals section -->
-  <section id="now">
-    <h2>What I am working on now</h2>
-    <p>
-      Right now I am learning SQL for working with databases and practising Java programming
-      to strengthen my understanding of algorithms and data structures.
-    </p>
-    <p>
-      Over the next year I aim to build small web applications that connect a web front end
-      to a real database, so I can practise full-stack development and data handling.
-    </p>
-    <p>
-      I am particularly interested in roles and projects related to data engineering,
-      where I can design efficient systems and work with real-world datasets.
-    </p>
-  </section>
-
-  <section id="blog">
-    <h2>Blog and learning notes</h2>
- 
-    <article>
-      <h3>What is a CPU cache? (short explanation)</h3>
-      <p><strong>Date:</strong> 10 February 2026</p>
-      <p>
-        A CPU cache is a small, very fast type of memory inside the processor. 
-        It stores copies of data that the CPU uses often, so the CPU does not
-        have to wait for slower main memory (RAM). This makes programs run faster.
-      </p>
-    </article>
- 
-    <article>
-      <h3>Intro to normalisation in databases</h3>
-      <p><strong>Date:</strong> 10 February 2026</p>
-      <p>
-        Normalisation is the process of organising tables in a database so that 
-        each table focuses on one topic and there is minimal duplicated data.
-        This helps keep the data consistent and easier to maintain.
-      </p>
-    </article>
- 
-    <p>
-      I use this section to write short explanations of ideas from computer architecture,
-      databases, and other modules, so I remember them and can show my understanding.
-    </p>
-  </section>
-
-  <section id="skills">
-  <h2>Skills and tools</h2>
-  <p><strong>Programming:</strong> Python (used in coursework projects), Java (first-year assignments)</p>
-  <p><strong>Web and databases:</strong> HTML, CSS, SQL (used to design and query simple databases in class).</p>
-  <p><strong>Tools:</strong> Git, GitHub, VS Code, Linux command line.</p>
-  <p><strong>Teamwork and communication:</strong> Collaborated on group coursework, wrote project reports, and presented solutions to classmates.</p>
-</section>
-
-<section id="production-diary">
-  <h2>Production diary – Week 15</h2>
-  <p><strong>Date:</strong> 10 February 2026</p>
-  <p>
-    This week I worked on my GitHub Pages portfolio website. I focused on
-    creating or improving the main sections (About, Projects, Skills, Contact)
-    and setting up my CS Maths & Tools page.
-  </p>
-  <p>
-    I am most happy with learning about the aspects of web design and learning about front end development in my own time. I'm most particularly taken with starting CSS.
-  </p>
-  <p>
-    I found it difficult to add images, and I still can't figure it out. Specifically how to add images via a weblink that is a creative vcommon.
-  </p>
-  <p>
-    Next time I want to improve the layout of my webpage to look more personalised and unique. I want my webpage to be represent me more while maintaining professionalism.
-  </p>
-</section>
-
-<!-- Contact Form — paste into your HTML where you want the form -->
-<section id="contact">
-<h2>Get In Touch</h2>
-<form id="contact-form">
-<div>
-<label for="name">Your Name</label>
-<input type="text" id="name" name="name" required
-placeholder="Jane Smith" />
-</div>
-<div>
-<label for="email">Your Email</label>
-<input type="email" id="email" name="email" required
-placeholder="jane@example.com" />
-</div>
-<div>
-<label for="message">Message</label>
-<textarea id="message" name="message" required
-placeholder="Say hello..." rows="5"></textarea>
-</div>
-<button type="submit" id="submit-btn">Send Message</button>
-<p id="form-status"></p>
-</form>
-</section>
-  
-</main>
-
-
 </html>
