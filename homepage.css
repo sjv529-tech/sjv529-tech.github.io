@@ -1,190 +1,203 @@
-html, body {
-  margin:0;
-  padding:0;
-  font-family:sans-serif;
-}
-p {
-  padding:20px;
+/* YOU REPLACE THESE WITH YOUR OWN IMAGE PATHS */
+:root {
+  --cork-bg: url('YOUR-CORK-BOARD-BACKGROUND.jpg');  /* your cork board image */
+  --pin-image: url('YOUR-PIN-IMAGE.png');            /* your push pin image (optional) */
+  --tape-image: url('YOUR-TAPE-IMAGE.png');          /* your washi tape image (optional) */
 }
 
-.content {
-  background-image:url('https://yesterweb.org/img/bb/cork.png');
-  margin:0 !important;
-  height:auto;
-  padding:20px !important;
-  margin:0 auto;
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: sans-serif;
 }
-.note-one {
-  width:220px;
-  height:350px;
-  margin-left:20px;
-  margin-top:20px;
-  position:relative;
-  background-color: #cbe0c3;
-  background-image:url('https://yesterweb.org/img/bb/paper-3.png');
-  overflow:auto;
+
+/* CORK BOARD - you provide the background image */
+.cork-board {
+  background-image: var(--cork-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* keeps background fixed while scrolling */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  /* fallback color while image loads */
+  background-color: #d2b48c;
 }
-.note-one > p {
-  padding-top:30px;
+
+/* ALL IMAGE LINKS HAVE FIXED POSITIONS */
+.pin-item {
+  display: block;
+  position: fixed;  /* stays in same spot on screen */
+  z-index: 5;
+  transition: all 0.3s ease;  /* smooth hover animation */
+  cursor: pointer;
 }
-.note-one-fg {
-  background-color:#fff968;
-  width:150px;
-  height:150px;
-  margin-left:auto;
-  margin-right:auto;
-  left: 0;
-  right: 0;
-  transform:rotate(-5deg);
-  poisition:relative;
+
+/* YOUR IMAGES - they will be whatever size you want */
+.pin-image {
+  display: block;
+  width: 100%;      /* image will fill the link container */
+  height: auto;     /* maintains aspect ratio */
+  transition: transform 0.3s ease;  /* smooth hover animation */
 }
-.note-one-fg::before {
-   	 content: "";
-	 position: absolute;
-	 bottom: -1.9em;
-	 right: 0;
-	 border-width: 2em 2em 0 0;
-	 border-style: solid;
-	 border-color: #ddd756 transparent;
+
+/* HOVER EFFECT - slight animation */
+.pin-item:hover {
+  transform: scale(1.1);  /* makes image 10% bigger on hover */
+  z-index: 100;
+  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.3));
 }
-.note-one-fg::after {
-	 content: "";
-	 position: absolute;
-	 bottom: -1.9em;
-	 left: 0;
-	 right: 1.9em;
-	 border-width: 1em;
-	 border-style: solid;
-	 border-color: #fff968;
+
+.pin-item:hover .pin-image {
+  transform: scale(1.05);  /* extra little zoom */
 }
-.note-two {
-  background-color:#ffbcd9;
-  width:200px;
-  height:200px;
-  margin-top:20px;
-  position:relative;
-  transform:rotate(2deg);
+
+/* OPTIONAL: If you want a different hover effect, uncomment one of these: */
+/* 
+.pin-item:hover {
+  transform: rotate(2deg) scale(1.1);
 }
-.note-two::before {
-   content: "";
-	 position: absolute;
-	 bottom: -1.8em;
-	 right: 0;
-	 border-width: 2em 2em 0 0;
-	 border-style: solid;
-	 border-color: #d8a2ab transparent;
-  
+
+.pin-item:hover {
+  transform: translateY(-10px);
 }
-.note-two::after {
-	 content: "";
-	 position: absolute;
-	 bottom: -1.8em;
-	 left: 0;
-	 right: 1.9em;
-	 border-width: 1em;
-	 border-style: solid;
-	 border-color: #ffbcd9;
+
+.pin-item:hover {
+  animation: wiggle 0.3s ease;
 }
-.note-three {
-  background-image:url('https://yesterweb.org/img/bb/lined_paper.png');
-  width:300px;
-  height:500px;
-  transform:rotate(-2deg);
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
 }
-.note-three-top{
-  background-color:#FAFAFA;
-  width:300px;
-  height:40px;
+*/
+
+/* FIXED POSITIONS FOR EACH IMAGE - ADJUST THESE NUMBERS */
+/* Change the top, left, bottom, right values to place images where you want */
+
+#about-link {
+  top: 50px;
+  left: 80px;
+  width: 150px;  /* adjust based on your image size */
+  transform: rotate(-3deg);  /* slightly tilted for messy look */
 }
-.note-four {
-  background-color:lightyellow;
-  width:200px;
-  height:300px;
+
+#devlog-link {
+  top: 200px;
+  right: 500px;
+  width: 140px;
+  transform: rotate(2deg);
 }
-.note-five {
-  position:relative;
-  background-color:white;
-  width:500px;
-  height:700px;
-  background-image:url('https://sadgrl.online/images/bgs/tile/sandy.jpg');
+
+#projects-link {
+  top: 350px;
+  left: 350px;
+  width: 160px;
+  transform: rotate(-4deg);
 }
-.note-five-fg {
-  background-color:#FFF968;
-  width:200px;
-  height:200px;
-  position:absolute;
-  top:0;
-  right:0;
-  transform:rotate(-4deg);
+
+#shrines-link {
+  top: 450px;
+  right: 300px;
+  width: 130px;
+  transform: rotate(5deg);
 }
-.row {
-  display:flex;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-  justify-content:space-evenly;
-  align-items:center;
+
+#message-link {
+  bottom: 150px;
+  left: 120px;
+  width: 145px;
+  transform: rotate(-2deg);
 }
-.row > div {
-  margin-right:30px;
-  margin-bottom:30px;
+
+#resources-link {
+  top: 100px;
+  right: 80px;
+  width: 155px;
+  transform: rotate(3deg);
 }
-.paperclip {
-  max-width:60px;
-  position:absolute;
-  top:-30px;
-  left:50px;
+
+#interests-link {
+  bottom: 200px;
+  right: 200px;
+  width: 140px;
+  transform: rotate(-5deg);
 }
-.blue {
-  background-color:lightblue;
-  transform:rotate(-2deg);
+
+#photos-link {
+  bottom: 100px;
+  left: 400px;
+  width: 150px;
+  transform: rotate(1deg);
 }
-.blue::before {
-   content: "";
-	 position: absolute;
-	 bottom: -1.9em;
-	 right: 0;
-	 border-width: 2em 2em 0 0;
-	 border-style: solid;
-	 border-color: #89b6c4 transparent;
-  
+
+#contact-link {
+  top: 600px;
+  left: 350px;
+  width: 120px;
+  transform: rotate(-3deg);
 }
-.blue::after {
-	 content: "";
-	 position: absolute;
-	 bottom: -1.9em;
-	 left: 0;
-	 right: 1.9em;
-	 border-width: 1em;
-	 border-style: solid;
-	 border-color: lightblue;
-}
+
+/* DECORATIVE PINS AND TAPE (optional) */
 .tack {
-  width:30px;
-  margin:0 auto;
-  display:block;
-  margin-top:10px;
+  position: fixed;
+  width: 25px;
+  height: auto;
+  z-index: 20;
+  pointer-events: none;  /* so pins don't block clicking on images */
+  opacity: 0.8;
 }
-.larger {
-  width:70px;
-  margin-left:50px;
-  margin-top:0px;
-}
+
 .tape {
-  width:110px;
-  margin-top:-20px;
-  margin-left:-20px;
-  transform:rotate(5deg);
+  position: fixed;
+  width: 80px;
+  height: auto;
+  z-index: 15;
+  pointer-events: none;
+  opacity: 0.5;
 }
-.intro {
-  width:500px;
-  height:100px;
-  text-align:center;
-  background-color:#6d457d;
-  background-image:url('https://yesterweb.org/img/bb/starring.png');
-  color:white;
-  transform:rotate(2deg);
+
+/* Position decorative elements */
+.tack-1 { top: 30px; left: 10%; transform: rotate(15deg); }
+.tack-2 { top: 20%; right: 5%; transform: rotate(-5deg); }
+.tack-3 { bottom: 15%; left: 15%; transform: rotate(25deg); }
+
+.tape-1 { top: 100px; left: 30%; transform: rotate(-10deg); width: 100px; }
+
+/* MOBILE FRIENDLY - stacks items vertically on phones */
+@media (max-width: 768px) {
+  .pin-item {
+    position: relative !important;
+    margin: 20px auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: rotate(0deg) !important;
+    width: 80% !important;  /* images take up most of screen width */
+    max-width: 200px;
+  }
+  
+  .cork-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-attachment: scroll; /* better mobile performance */
+  }
+  
+  .tack, .tape {
+    display: none; /* hide decorations on mobile for cleaner look */
+  }
 }
-.intro > p {
-  margin:20px;
-  padding:0;
+
+/* OPTIONAL: If you want a pressed effect when clicking */
+.pin-item:active {
+  transform: scale(0.95) !important;
+  transition: transform 0.1s ease;
 }
