@@ -1,76 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My title here!</title>
+    <title>✉️ message me ✉️</title>
     <link rel="stylesheet" href="css.css" />
-  </head>
-  <body>
+    <style>
+        /* additional styles just for the message page */
+        .message-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .message-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .message-header h1 {
+            font-size: 2em;
+            color: var(--accent-dark, #c9507a);
+            margin-bottom: 5px;
+        }
+        
+        .envelope-decoration {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* TRANSPARENT FORM CONTAINER */
+        .form-container {
+            background-color: transparent;  /* completely transparent */
+            padding: 20px;
+            position: relative;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--accent-dark, #c9507a);
+            font-size: 1.1em;
+            text-shadow: 0 0 5px rgba(255,255,255,0.8); /* makes text readable on any background */
+        }
+        
+        label i {
+            margin-right: 8px;
+            font-style: normal;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--accent-light, #fb90b6);
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 1em;
+            background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white */
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            backdrop-filter: blur(2px); /* slight blur effect for readability */
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-dark, #c9507a);
+            box-shadow: 0 0 0 4px rgba(251, 144, 182, 0.2);
+            background-color: rgba(255, 255, 255, 1); /* solid white on focus */
+        }
+        
+        /* BIG MESSAGE BOX */
+        textarea {
+            height: 250px;  /* even bigger! */
+            resize: vertical;
+            min-height: 200px;
+            max-height: 500px;
+            line-height: 1.6;
+        }
+        
+        .character-count {
+            text-align: right;
+            font-size: 0.8em;
+            margin-top: 5px;
+            color: var(--accent-dark, #c9507a);
+            text-shadow: 0 0 3px white;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        #submit-btn {
+            background-color: var(--accent-light, #fb90b6);
+            color: white;
+            box-shadow: 0 4px 0 var(--accent-dark, #c9507a);
+        }
+        
+        #submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 var(--accent-dark, #c9507a);
+        }
+        
+        #submit-btn:active:not(:disabled) {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 var(--accent-dark, #c9507a);
+        }
+        
+        #submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .clear-btn {
+            background-color: rgba(224, 224, 224, 0.8);
+            color: #666;
+            box-shadow: 0 4px 0 #b0b0b0;
+            backdrop-filter: blur(2px);
+        }
+        
+        .clear-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #b0b0b0;
+        }
+        
+        .clear-btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #b0b0b0;
+        }
+        
+        #form-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+            backdrop-filter: blur(2px);
+        }
+        
+        #form-status.success {
+            display: block;
+            background-color: rgba(212, 237, 218, 0.9);
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        #form-status.error {
+            display: block;
+            background-color: rgba(248, 215, 218, 0.9);
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        /* decorative elements - optional */
+        .sticker {
+            position: absolute;
+            font-size: 2em;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .sticker-1 { top: 10px; right: 10px; transform: rotate(15deg); }
+        .sticker-2 { bottom: 10px; left: 10px; transform: rotate(-10deg); }
+        
+        /* make sure text is readable on any background */
+        .message-header h1,
+        .message-header p {
+            text-shadow: 0 0 5px white, 0 0 10px white;
+        }
+    </style>
+</head>
+<body>
     <div id="outer">
-  <nav>
-    <ul>
-      <li><a href="about.html">about me</a></li>
-      <li><a href="devlog.html">dev diary</a></li>
-      <li><a href="projects.html">projects</a></li>
-      <li><a href="shrines.html">shrines</a></li>
-      <li><a href="message.html">message me</a></li>
-      <li><a href="resources.html">resources</a></li>
-    </ul>
-  </nav>
-  <div id="container">
-<!-- Contact Form — paste into your HTML where you want the form -->
-<section id="contact">
-<h2>Get In Touch</h2>
-<form id="contact-form">
-<div>
-<label for="name">Your Name</label>
-<input type="text" id="name" name="name" required
-placeholder="Jane Smith" />
-</div>
-<div>
-<label for="email">Your Email</label>
-<input type="email" id="email" name="email" required
-placeholder="jane@example.com" />
-</div>
-<div>
-<label for="message">Message</label>
-<textarea id="message" name="message" required
-placeholder="Say hello..." rows="5"></textarea>
-</div>
-<button type="submit" id="submit-btn">Send Message</button>
-<p id="form-status"></p>
-</form>
-</section>
-  </div>
-</div>
+        <nav>
+            <ul>
+                <li><a href="about.html">about me</a></li>
+                <li><a href="devlog.html">dev diary</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="shrines.html">shrines</a></li>
+                <li><a href="message.html">message me</a></li>
+                <li><a href="resources.html">resources</a></li>
+            </ul>
+        </nav>
+        
+        <div id="container">
+            <article>
+                <div class="message-container">
+                    
+                    <div class="message-header">
+                        <div class="envelope-decoration">✉️💌✉️</div>
+                        <h1>send me a message!</h1>
+                        <p>i'd love to hear from you</p>
+                    </div>
+                    
+                    <!-- TRANSPARENT FORM CONTAINER -->
+                    <div class="form-container">
+                        <!-- Contact Form -->
+                        <section id="contact">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <i>🌷</i> your name
+                                    </label>
+                                    <input type="text" id="name" name="name" required
+                                        placeholder="what's your name?" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i>✉️</i> your email
+                                    </label>
+                                    <input type="email" id="email" name="email" required
+                                        placeholder="where should i reply?" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">
+                                        <i>💬</i> your message
+                                    </label>
+                                    <textarea id="message" name="message" required
+                                        placeholder="write anything! questions, thoughts, just saying hi..."></textarea>
+                                    <div class="character-count">
+                                        <span id="char-count">0</span> / 1000 characters
+                                    </div>
+                                </div>
+                                
+                                <div class="button-group">
+                                    <button type="submit" id="submit-btn">send message 💌</button>
+                                    <button type="button" class="clear-btn" onclick="clearForm()">clear ✗</button>
+                                </div>
+                                
+                                <p id="form-status"></p>
+                            </form>
+                        </section>
+                    </div>
+                    
+                    <!-- optional decorative stickers - remove if you don't want them -->
+                    <div class="sticker sticker-1">⭐️</div>
+                    <div class="sticker sticker-2">🌸</div>
+                    
+                </div>
+            </article>
+        </div>
+    </div>
 
-<script>
+    <script>
+        // Character counter for message box
+        const messageInput = document.getElementById('message');
+        const charCount = document.getElementById('char-count');
+        const maxChars = 1000;
+        
+        messageInput.addEventListener('input', function() {
+            const remaining = this.value.length;
+            charCount.textContent = remaining;
+            
+            if (remaining > maxChars) {
+                this.value = this.value.substring(0, maxChars);
+                charCount.textContent = maxChars;
+            }
+            
+            // change color when approaching limit
+            if (remaining > maxChars * 0.9) {
+                charCount.style.color = '#DC2626';
+            } else if (remaining > maxChars * 0.7) {
+                charCount.style.color = '#D97706';
+            } else {
+                charCount.style.color = 'var(--accent-dark, #c9507a)';
+            }
+        });
+        
+        // Clear form
+        function clearForm() {
+            document.getElementById('contact-form').reset();
+            charCount.textContent = '0';
+            document.getElementById('form-status').style.display = 'none';
+        }
+        
         // ── Supabase config ─────────────────────────────────────────────
         const SUPABASE_URL = "https://wrovwsqyhdfpiqjzcnlx.supabase.co";
         const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indyb3Z3c3F5aGRmcGlxanpjbmx4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNDcwMTIsImV4cCI6MjA4ODYyMzAxMn0.ph3pRLl4iNE5AjzaHDSkJsCxH1WcLitYejiUTEsme7E";
 
-        // Wait for the DOM to be fully loaded before adding event listeners
         document.addEventListener('DOMContentLoaded', function() {
-            // ── Form submission handler ──────────────────────────────────────
             document.getElementById("contact-form").addEventListener("submit", async function (event) {
-                // Prevent the default browser form submission (page reload)
                 event.preventDefault();
 
-                // Grab the form values
                 const name = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
                 const message = document.getElementById("message").value.trim();
                 const btn = document.getElementById("submit-btn");
                 const status = document.getElementById("form-status");
 
-                // Disable the button while we send (prevents double-submit)
                 btn.disabled = true;
-                btn.textContent = "Sending...";
-                status.textContent = "";
+                btn.textContent = "sending... 💌";
+                status.style.display = 'none';
 
                 try {
-                    // Call the Supabase REST API to insert a row
                     const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_messages`, {
                         method: "POST",
                         headers: {
@@ -83,29 +336,29 @@ placeholder="Say hello..." rows="5"></textarea>
                     });
 
                     if (response.ok) {
-                        // Success — show confirmation and reset the form
-                        status.textContent = "✓ Message sent! I will be in touch soon.";
-                        status.style.color = "#1A7A4A";
+                        status.textContent = "✓ message sent! i'll get back to you soon 💌";
+                        status.className = 'success';
+                        status.style.display = 'block';
                         event.target.reset();
+                        charCount.textContent = '0';
                     } else {
-                        // Supabase returned an error — log it for debugging
                         const err = await response.json();
                         console.error("Supabase error:", err);
-                        status.textContent = "Something went wrong. Please try again.";
-                        status.style.color = "#DC2626";
+                        status.textContent = "something went wrong... maybe try again?";
+                        status.className = 'error';
+                        status.style.display = 'block';
                     }
                 } catch (networkError) {
-                    // Network/connectivity problem
                     console.error("Network error:", networkError);
-                    status.textContent = "Could not connect. Check your internet connection.";
-                    status.style.color = "#DC2626";
+                    status.textContent = "couldn't connect. check your internet?";
+                    status.className = 'error';
+                    status.style.display = 'block';
                 } finally {
-                    // Always re-enable the button
                     btn.disabled = false;
-                    btn.textContent = "Send Message";
+                    btn.textContent = "send message 💌";
                 }
             });
         });
     </script>
-  </body>
+</body>
 </html>
