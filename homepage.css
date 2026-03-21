@@ -1,6 +1,6 @@
 /* YOU REPLACE THESE WITH YOUR OWN IMAGE PATHS */
 :root {
-  --cork-bg: url('img/shoujo\ wallpaper.webp');  /* your cork board image */
+  --cork-bg: url('img/bg7.jpg');  /* your cork board image */
   --pin-image: url('YOUR-PIN-IMAGE.png');            /* your push pin image (optional) */
   --tape-image: url('YOUR-TAPE-IMAGE.png');          /* your washi tape image (optional) */
 }
@@ -88,44 +88,49 @@ html, body {
 }
 
 #devlog-link {
-  top: 100px;
-  right: 500px;
-  width: 200px;
+  top: 539.3px;
+  left: 1103.6px;
+  width: 228.7px;
+  height:228.7px;
   transform: rotate(2deg);
 }
 
 #projects-link {
-  top: 200px;
-  left: 250px;
-  width: 200px;
+  top: 34.3px;
+  left: 877.7px;
+  width: 245.3px;
+  height:245.3px;
   transform: rotate(-4deg);
 }
 
 #shrines-link {
-  top: 450px;
-  right: 500px;
-  width: 200px;
+  top: 496px;
+  left: 91.9px;
+  width: 244px;
+  height: 244px;
   transform: rotate(5deg);
 }
 
 #message-link {
-  bottom: 150px;
-  left: 120px;
-  width: 200px;
+  top: 205.4px;
+  left: 189.8px;
+  width: 226px;
+  height: 211.9px;
   transform: rotate(-2deg);
 }
 
 #resources-link {
-  top: 100px;
-  right: 80px;
-  width: 200px;
+  top: 57.2;
+  left: 348.4px;
+  width: 155.5px;
   transform: rotate(3deg);
 }
 
 #interests-link {
-  bottom: 200px;
-  right: 80px;
-  width: 200px;
+  top: 405.9px;
+  left: 836.7px;
+  width: 188.3.3px;
+  height: 191.3px;
   transform: rotate(-5deg);
 }
 
