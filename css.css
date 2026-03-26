@@ -13,31 +13,29 @@ html, body {
   margin:0;
   font-family:sans-serif;
   font-size:0.85em;
-  /* here is where you'd add a background image */
+  background-image: url("img/bg8.webp");
 }
 body {
   background-color:var(--bg-color);
 }
 #container {
-  background-color:var(--pg-color);
-  width:60%;
-  border-left:100px solid var(--accent);
-  border-right:1px solid var(--accent-2);
+  background-color:#dbccae;
+  width:696.7px;
+  height: 638.9px;
+  left: 216.9px;
+  top: 94.1px;
+  border-radius: 20px;
   position:relative;
 }
-#outer {
-  border-left:4px dotted var(--accent-2);
-  margin-left:100px;
-}
 nav {
-  background-color:var(--accent);
+  background-color:#94392b;
   position:absolute;
-  top:100px;
-  left:50px;
-  border:1px solid var(--bg-color);
-  width:120px;
-  height: 200px;
+  top:200px;
+  left:100.4px;
+  width:153.5px;
+  height: 468px;
   z-index:9;
+  border-radius: 20px;
 }
 article { 
 padding:50px;
@@ -46,11 +44,11 @@ padding:50px;
 }
 h2 {
   font-size:15px;
-  border-bottom:1px solid var(--accent-2);
+  border-bottom:1px solid #94392b;
   padding-bottom:8px;
 }
 nav > ul {
-  background-color:var(--accent-2);
+  background-color:#94392b;
   margin:20px;
   padding:0;
   list-style:none;

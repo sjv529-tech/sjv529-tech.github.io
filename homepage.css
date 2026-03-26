@@ -81,8 +81,8 @@ html, body {
 /* Change the top, left, bottom, right values to place images where you want */
 
 #about-link {
-  top: 50px;
-  left: 80px;
+  top: 211.7px;
+  left: 303.1px;
   width: 200px;  /* adjust based on your image size */
   transform: rotate(-3deg);  /* slightly tilted for messy look */
 }
@@ -120,7 +120,7 @@ html, body {
 }
 
 #resources-link {
-  top: 117.2;
+  top: 117.2px;
   left: 348.4px;
   width: 155.5px;
   transform: rotate(3deg);
