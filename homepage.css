@@ -55,8 +55,7 @@ html, body {
   transform: scale(1.05);  /* extra little zoom */
 }
 
-/* OPTIONAL: If you want a different hover effect, uncomment one of these: */
-/* 
+ 
 .pin-item:hover {
   transform: rotate(2deg) scale(1.1);
 }
@@ -75,7 +74,7 @@ html, body {
   75% { transform: rotate(-3deg); }
   100% { transform: rotate(0deg); }
 }
-*/
+
 
 /* FIXED POSITIONS FOR EACH IMAGE - ADJUST THESE NUMBERS */
 /* Change the top, left, bottom, right values to place images where you want */

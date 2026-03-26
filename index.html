@@ -4,7 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepage.css" />
-    <title>୨୧ ⋆｡˚ ⋆ </title>
+    <title>୨୧ ⋆｡˚ ⋆ ella's web ୨୧ ⋆｡˚ ⋆ </title>
+    <style>
+        /* ADDITIONAL STYLES FOR LABELS & ENHANCED HOVER EFFECTS */
+        /* this works alongside your existing homepage.css */
+
+        .pin-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            will-change: transform, filter;
+        }
+
+        .pin-image {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* ========== CUTE LABEL STYLES ========== */
+        .pin-label {
+            display: inline-block;
+            margin-top: 12px;
+            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Comic Neue', 'Kalam', cursive, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            background: rgba(255, 248, 225, 0.9);
+            backdrop-filter: blur(2px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            color: #5e3a2b;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 245, 0.8);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(230, 190, 140, 0.6);
+            text-shadow: 0 1px 0 rgba(255, 255, 200, 0.6);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        /* tiny decorative doodle before label (optional cuteness) */
+        .pin-label::before {
+            content: "✧ ";
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .pin-label::after {
+            content: " ✧";
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* HOVER EFFECT: colour filter covers both label + icon, plus extra tilt (+5deg more than original) */
+        .pin-item:hover {
+            transform: scale(1.05); /* base scaling kept from original but we'll preserve tilt change */
+            filter: drop-shadow(0 12px 15px rgba(0, 0, 0, 0.25));
+            z-index: 200;
+        }
+
+        /* apply colour overlay filter to image + label as a group */
+        .pin-item:hover .pin-image {
+            filter: brightness(1.02) saturate(1.2) drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            transition: filter 0.2s ease;
+        }
+
+        /* small adjustment for labels to not overflow on narrow screens (optional) */
+        @media (max-width: 768px) {
+            .pin-label {
+                font-size: 0.8rem;
+                padding: 4px 12px;
+                white-space: normal;
+                text-align: center;
+            }
+            .pin-label::before, .pin-label::after {
+                content: " ✦ ";
+            }
+        }
+
+        /* ensure that the colour overlay works well with existing tape/pin decorations */
+        .tack, .tape {
+            z-index: 25;
+        }
+    </style>
 </head>
 <body>
     <!-- CORK BOARD BACKGROUND - you replace this with your own bg image -->
@@ -18,43 +104,70 @@
         <!-- DECORATIVE WASHI TAPE (optional) - replace with your own tape image -->
         <img src="YOUR-TAPE-IMAGE.png" class="tape tape-1" alt="">
 
-        <!-- MAIN NAVIGATION IMAGES - replace with YOUR images -->
-        <!-- Each image links to a different page -->
+        <!-- MAIN NAVIGATION IMAGES - with cute labels! -->
+        <!-- Each image links to a different page, now includes descriptive text labels -->
         
         <a href="about.html" class="pin-item" id="about-link">
-            <img src="placeholder.png" class="pin-image" alt="about me">
+            <span class="pin-image-wrapper">
+                <img src="placeholder.png" class="pin-image" alt="about me">
+            </span>
+            <span class="pin-label">about me</span>
         </a>
 
         <a href="devlog.html" class="pin-item" id="devlog-link">
-            <img src="img/devlog.png" class="pin-image" alt="dev diary">
+            <span class="pin-image-wrapper">
+                <img src="img/devlog.png" class="pin-image" alt="dev diary">
+            </span>
+            <span class="pin-label">dev diary</span>
         </a>
 
         <a href="projects.html" class="pin-item" id="projects-link">
-            <img src="img/misoguy.png" class="pin-image" alt="projects">
+            <span class="pin-image-wrapper">
+                <img src="img/misoguy.png" class="pin-image" alt="projects">
+            </span>
+            <span class="pin-label">projects</span>
         </a>
 
         <a href="shrines.html" class="pin-item" id="shrines-link">
-            <img src="img/tigr.png" class="pin-image" alt="shrines">
+            <span class="pin-image-wrapper">
+                <img src="img/tigr.png" class="pin-image" alt="shrines">
+            </span>
+            <span class="pin-label">shrines</span>
         </a>
 
         <a href="message.html" class="pin-item" id="message-link">
-            <img src="img/greenman.png" class="pin-image" alt="message me">
+            <span class="pin-image-wrapper">
+                <img src="img/greenman.png" class="pin-image" alt="message me">
+            </span>
+            <span class="pin-label">message me</span>
         </a>
 
         <a href="resources.html" class="pin-item" id="resources-link">
-            <img src="img/cookie_face.png" class="pin-image" alt="resources">
+            <span class="pin-image-wrapper">
+                <img src="img/cookie_face.png" class="pin-image" alt="resources">
+            </span>
+            <span class="pin-label">resources</span>
         </a>
 
         <a href="interests.html" class="pin-item" id="interests-link">
-            <img src="img/teddy.png" class="pin-image" alt="interests">
+            <span class="pin-image-wrapper">
+                <img src="img/teddy.png" class="pin-image" alt="interests">
+            </span>
+            <span class="pin-label">interests</span>
         </a>
 
         <a href="photos.html" class="pin-item" id="photos-link">
-            <img src="YOUR-PHOTOS-IMAGE.png" class="pin-image" alt="photos">
+            <span class="pin-image-wrapper">
+                <img src="YOUR-PHOTOS-IMAGE.png" class="pin-image" alt="photos">
+            </span>
+            <span class="pin-label">photos</span>
         </a>
 
         <a href="contact.html" class="pin-item" id="contact-link">
-            <img src="YOUR-CONTACT-IMAGE.png" class="pin-image" alt="contact">
+            <span class="pin-image-wrapper">
+                <img src="YOUR-CONTACT-IMAGE.png" class="pin-image" alt="contact">
+            </span>
+            <span class="pin-label">contact</span>
         </a>
 
     </div>
