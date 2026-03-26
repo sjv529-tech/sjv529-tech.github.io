@@ -80,15 +80,15 @@ html, body {
 /* Change the top, left, bottom, right values to place images where you want */
 
 #about-link {
-  top: 211.7px;
-  left: 303.1px;
+  top: 611.7px;
+  left: 613.1px;
   width: 200px;  /* adjust based on your image size */
   transform: rotate(-3deg);  /* slightly tilted for messy look */
 }
 
 #devlog-link {
   top: 539.3px;
-  left: 1103.6px;
+  left: 1303.6px;
   width: 228.7px;
   height:228.7px;
   transform: rotate(2deg);
@@ -96,7 +96,7 @@ html, body {
 
 #projects-link {
   top: 34.3px;
-  left: 877.7px;
+  left: 1077.7px;
   width: 245.3px;
   height:245.3px;
   transform: rotate(-4deg);
@@ -126,8 +126,8 @@ html, body {
 }
 
 #interests-link {
-  top: 405.9px;
-  left: 1048.4px;
+  top: 305.9px;
+  left: 1248.4px;
   width: 188.3px;
   height: 191.3px;
   transform: rotate(-5deg);
