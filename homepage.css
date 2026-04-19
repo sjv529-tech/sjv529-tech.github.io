@@ -1,207 +1,190 @@
-/* YOU REPLACE THESE WITH YOUR OWN IMAGE PATHS */
+/* CORK BOARD THEME - NO HOVER ANIMATIONS! */
 :root {
-  --cork-bg: url('img/bg7.jpg');  /* your cork board image */
-  --pin-image: url('YOUR-PIN-IMAGE.png');            /* your push pin image (optional) */
-  --tape-image: url('YOUR-TAPE-IMAGE.png');          /* your washi tape image (optional) */
+    --cork-bg: url('img/bg7.jpg');
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Comic Neue', cursive, sans-serif;
+    background-color: #d2b48c;
 }
 
-/* CORK BOARD - you provide the background image */
-.cork-board {
-  background-image: var(--cork-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* keeps background fixed while scrolling */
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
-  /* fallback color while image loads */
-  background-color: #d2b48c;
+/* CORK BOARD BACKGROUND */
+.main-board {
+    background-image: var(--cork-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #d2b48c;
 }
 
-/* ALL IMAGE LINKS HAVE FIXED POSITIONS */
+/* PIN ITEM - NO hover scaling, NO wiggle, NO shadows! */
 .pin-item {
-  display: block;
-  position: fixed;  /* stays in same spot on screen */
-  z-index: 5;
-  transition: all 0.3s ease;  /* smooth hover animation */
-  cursor: pointer;
-}
-
-/* YOUR IMAGES - they will be whatever size you want */
-.pin-image {
-  display: block;
-  width: 100%;      /* image will fill the link container */
-  height: auto;     /* maintains aspect ratio */
-  transition: transform 0.3s ease;  /* smooth hover animation */
-}
-
-/* HOVER EFFECT - slight animation */
-.pin-item:hover {
-  transform: scale(1.1);  /* makes image 10% bigger on hover */
-  z-index: 100;
-  filter: drop-shadow(0 10px 8px rgba(0,0,0,0.3));
-}
-
-.pin-item:hover .pin-image {
-  transform: scale(1.05);  /* extra little zoom */
-}
-
- 
-.pin-item:hover {
-  transform: rotate(2deg) scale(1.1);
-}
-
-.pin-item:hover {
-  transform: translateY(-10px);
-}
-
-.pin-item:hover {
-  animation: wiggle 0.3s ease;
-}
-
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(3deg); }
-  75% { transform: rotate(-3deg); }
-  100% { transform: rotate(0deg); }
-}
-
-
-/* FIXED POSITIONS FOR EACH IMAGE - ADJUST THESE NUMBERS */
-/* Change the top, left, bottom, right values to place images where you want */
-
-#about-link {
-  top: 611.7px;
-  left: 613.1px;
-  width: 200px;  /* adjust based on your image size */
-  transform: rotate(-3deg);  /* slightly tilted for messy look */
-}
-
-#devlog-link {
-  top: 539.3px;
-  left: 1303.6px;
-  width: 228.7px;
-  height:228.7px;
-  transform: rotate(2deg);
-}
-
-#projects-link {
-  top: 34.3px;
-  left: 1077.7px;
-  width: 245.3px;
-  height:245.3px;
-  transform: rotate(-4deg);
-}
-
-#shrines-link {
-  top: 496px;
-  left: 91.9px;
-  width: 244px;
-  height: 244px;
-  transform: rotate(5deg);
-}
-
-#message-link {
-  top: 205.4px;
-  left: 189.8px;
-  width: 226px;
-  height: 211.9px;
-  transform: rotate(-2deg);
-}
-
-#resources-link {
-  top: 117.2px;
-  left: 348.4px;
-  width: 155.5px;
-  transform: rotate(3deg);
-}
-
-#interests-link {
-  top: 305.9px;
-  left: 1248.4px;
-  width: 188.3px;
-  height: 191.3px;
-  transform: rotate(-5deg);
-}
-
-#photos-link {
-  bottom: 100px;
-  left: 400px;
-  width: 150px;
-  transform: rotate(1deg);
-}
-
-#contact-link {
-  top: 300px;
-  left: 500px;
-  width: 120px;
-  transform: rotate(-3deg);
-}
-
-/* DECORATIVE PINS AND TAPE (optional) */
-.tack {
-  position: fixed;
-  width: 25px;
-  height: auto;
-  z-index: 20;
-  pointer-events: none;  /* so pins don't block clicking on images */
-  opacity: 0.8;
-}
-
-.tape {
-  position: fixed;
-  width: 80px;
-  height: auto;
-  z-index: 15;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-/* Position decorative elements */
-.tack-1 { top: 30px; left: 10%; transform: rotate(15deg); }
-.tack-2 { top: 20%; right: 5%; transform: rotate(-5deg); }
-.tack-3 { bottom: 15%; left: 15%; transform: rotate(25deg); }
-
-.tape-1 { top: 100px; left: 30%; transform: rotate(-10deg); width: 100px; }
-
-/* MOBILE FRIENDLY - stacks items vertically on phones */
-@media (max-width: 768px) {
-  .pin-item {
-    position: relative !important;
-    margin: 20px auto !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: rotate(0deg) !important;
-    width: 80% !important;  /* images take up most of screen width */
-    max-width: 200px;
-  }
-  
-  .cork-board {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-attachment: scroll; /* better mobile performance */
-  }
-  
-  .tack, .tape {
-    display: none; /* hide decorations on mobile for cleaner look */
-  }
+    justify-content: flex-start;
+    text-decoration: none;
+    position: fixed;
+    z-index: 5;
+    cursor: pointer;
+    /* No transitions! */
 }
 
-/* OPTIONAL: If you want a pressed effect when clicking */
-.pin-item:active {
-  transform: scale(0.95) !important;
-  transition: transform 0.1s ease;
+.pin-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* No transitions! */
+}
+
+/* REMOVE ALL HOVER EFFECTS - this is important! */
+.pin-item:hover {
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+}
+
+.pin-item:hover .pin-image {
+    transform: none !important;
+    filter: none !important;
+}
+
+/* CUTE LABEL STYLES */
+.pin-label {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Comic Neue', 'Kalam', cursive, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    background: rgba(255, 248, 225, 0.9);
+    backdrop-filter: blur(2px);
+    padding: 6px 14px;
+    border-radius: 60px;
+    color: #5e3a2b;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 245, 0.8);
+    border: 1px solid rgba(230, 190, 140, 0.6);
+    text-shadow: 0 1px 0 rgba(255, 255, 200, 0.6);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.pin-label::before {
+    content: "✧ ";
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.pin-label::after {
+    content: " ✧";
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* FIXED POSITIONS FOR EACH IMAGE */
+#about-link {
+    top: 611.7px;
+    left: 613.1px;
+    width: 200px;
+    transform: rotate(-3deg);
+}
+
+#devlog-link {
+    top: 539.3px;
+    left: 1303.6px;
+    width: 228.7px;
+    transform: rotate(2deg);
+}
+
+#projects-link {
+    top: 34.3px;
+    left: 1077.7px;
+    width: 245.3px;
+    transform: rotate(-4deg);
+}
+
+#shrines-link {
+    top: 496px;
+    left: 91.9px;
+    width: 244px;
+    transform: rotate(5deg);
+}
+
+#message-link {
+    top: 205.4px;
+    left: 189.8px;
+    width: 226px;
+    transform: rotate(-2deg);
+}
+
+#resources-link {
+    top: 117.2px;
+    left: 348.4px;
+    width: 155.5px;
+    transform: rotate(3deg);
+}
+
+#interests-link {
+    top: 305.9px;
+    left: 1248.4px;
+    width: 188.3px;
+    transform: rotate(-5deg);
+}
+
+#photos-link {
+    bottom: 100px;
+    left: 400px;
+    width: 150px;
+    transform: rotate(1deg);
+}
+
+#contact-link {
+    top: 300px;
+    left: 500px;
+    width: 120px;
+    transform: rotate(-3deg);
+}
+
+/* MOBILE FRIENDLY */
+@media (max-width: 768px) {
+    .main-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        background-attachment: scroll;
+    }
+
+    .pin-item {
+        position: relative !important;
+        margin: 20px auto !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: rotate(0deg) !important;
+        width: 80% !important;
+        max-width: 220px;
+    }
+
+    .pin-label {
+        white-space: normal;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+
+    .pin-label::before,
+    .pin-label::after {
+        content: " ✦ ";
+    }
 }
