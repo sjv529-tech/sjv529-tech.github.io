@@ -104,8 +104,8 @@ html, body {
 
 /* FIXED POSITIONS FOR EACH IMAGE */
 #about-link {
-    top: 611.7px;
-    left: 713.1px;
+    top: 541.7px;
+    left: 683.1px;
     width: 400px;
     height: 400px;
     transform: rotate(-3deg);
