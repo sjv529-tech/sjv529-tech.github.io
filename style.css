@@ -16,11 +16,11 @@
 html,
 body {
   margin: 0;
+  padding: 0;
   font-family: "Verdana", "Segoe UI", system-ui, sans-serif;
   font-size: 10px;
   background-color: #2a1a0e;
-  /* single background image - NO REPEAT */
-  background-image: url("img/bg2.webp");
+  background-image: url("img/bg6.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -102,59 +102,62 @@ p, li, span, div {
   padding: 20px;
 }
 
+/* CONTAINER - now responsive! */
 .container {
   position: relative;
-  background-image: url("https://sadgrl.online/images/lyts/not-mine/notebook-collage.png");
-  background-repeat: no-repeat;
-  background-size: contain;
   max-width: 900px;
-  height: 770px;
+  width: 90%;
   margin: 30px auto;
-  box-shadow: 0 10px 30px var(--shadow-warm);
-  border-radius: 20px;
+  background: transparent;
+  min-height: auto;
 }
 
+/* hide the static background image on mobile */
+.container::before {
+  display: none;
+}
+
+/* reposition all elements to be relative/stacked on all devices */
 .post-it,
 .white-box,
 .notebook,
 .yellow-note {
-  position: absolute;
+  position: relative;
+  margin: 15px auto;
+  left: auto;
+  top: auto;
+  width: 95%;
 }
 
 .post-it {
-  top: 20px;
-  left: 40px;
-  width: 130px;
+  width: 200px;
   background: rgba(255, 248, 210, 0.95);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 3px 8px rgba(0,0,0,0.1);
-  font-family: "Comic Neue", cursive;
   transform: rotate(-2deg);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
 .post-it p {
   margin: 5px 0;
-  font-size: 10px;
+  font-size: 11px;
   color: #3a2a1a;
   font-weight: 500;
 }
 
 .white-box {
-  top: 20px;
-  left: 180px;
-  width: 500px;
-  height: 100px;
-  overflow: hidden;
   background: rgba(255, 252, 240, 0.92);
   border-radius: 12px;
   padding: 8px 15px;
   box-shadow: 0 2px 8px var(--shadow-warm);
+  margin-bottom: 20px;
+  height: auto;
+  min-height: 80px;
 }
 
 .title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
   letter-spacing: 1px;
   border-bottom: 3px dotted var(--accent-soft-blush);
@@ -169,30 +172,32 @@ p, li, span, div {
 }
 
 .notebook {
-  top: 172px;
-  left: 145px;
+  margin-bottom: 20px;
+  width: 95%;
 }
 
 .notebook > .wrapper {
   overflow: auto;
-  height: 450px;
-  width: 380px;
-  padding-right: 84px;
+  height: auto;
+  max-height: 500px;
+  width: 100%;
+  padding: 15px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-soft-blush) #f0e0c8;
   background: rgba(255, 252, 240, 0.85);
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .notebook > .wrapper p {
-  line-height: 16.2px;
-  margin-bottom: 16.5px;
+  line-height: 1.5;
+  margin-bottom: 15px;
   font-size: 11px;
   color: var(--text-dark);
 }
 
 .page-title {
-  font-size: 24px;
+  font-size: 22px;
   padding-bottom: 6px;
   color: #8b3a2a;
   font-weight: bold;
@@ -201,18 +206,15 @@ p, li, span, div {
 }
 
 .yellow-note {
-  left: 640px;
-  top: 160px;
-  width: 180px;
-  height: 550px;
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-golden-honey) #f5e6c8;
   background: rgba(255, 250, 210, 0.92);
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   box-shadow: -2px 3px 10px var(--shadow-warm);
-  transform: rotate(1deg);
+  transform: rotate(0deg);
+  margin-bottom: 20px;
+  height: auto;
+  max-height: 400px;
+  overflow: auto;
 }
 
 .yellow-note p,
@@ -282,23 +284,98 @@ ul.pixelbullets li {
   color: var(--text-dark);
 }
 
-/* responsive adjustments */
-@media (max-width: 900px) {
+/* DESKTOP STYLES - only apply on larger screens */
+@media (min-width: 769px) {
   .container {
-    transform: scale(0.9);
-    transform-origin: top center;
-    margin: 20px auto;
+    position: relative;
+    background-image: url("https://sadgrl.online/images/lyts/not-mine/notebook-collage.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 900px;
+    height: 770px;
+    margin: 30px auto;
+  }
+  
+  .post-it,
+  .white-box,
+  .notebook,
+  .yellow-note {
+    position: absolute;
+    margin: 0;
+  }
+  
+  .post-it {
+    top: 20px;
+    left: 40px;
+    width: 130px;
+    margin: 0;
+  }
+  
+  .white-box {
+    top: 20px;
+    left: 180px;
+    width: 500px;
+    height: 100px;
+    margin: 0;
+  }
+  
+  .title {
+    font-size: 32px;
+  }
+  
+  .notebook {
+    top: 172px;
+    left: 145px;
+    margin: 0;
+    width: auto;
+  }
+  
+  .notebook > .wrapper {
+    height: 450px;
+    width: 380px;
+    padding-right: 84px;
+  }
+  
+  .yellow-note {
+    left: 640px;
+    top: 160px;
+    width: 180px;
+    height: 550px;
+    margin: 0;
+    transform: rotate(1deg);
+  }
+  
+  .page-title {
+    font-size: 24px;
   }
 }
 
-@media (max-width: 768px) {
-  .container {
-    transform: scale(0.85);
+/* small mobile adjustments */
+@media (max-width: 480px) {
+  body {
+    font-size: 9px;
   }
+  
+  .title {
+    font-size: 22px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+  }
+  
   .home-button {
     bottom: 15px;
     right: 15px;
-    padding: 10px 16px;
+    padding: 8px 14px;
     font-size: 10px;
+  }
+  
+  .post-it {
+    width: 160px;
+  }
+  
+  .post-it p {
+    font-size: 9px;
   }
 }
