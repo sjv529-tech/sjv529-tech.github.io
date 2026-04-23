@@ -6,6 +6,11 @@
   --accent-warm-taupe: #b5957a;
   --paper-warm: #fdf8ed;
   --shadow-warm: rgba(100, 60, 40, 0.15);
+  
+  /* text colours - all dark and readable */
+  --text-dark: #2c2418;
+  --text-medium: #4a3a2a;
+  --text-soft: #5c4a35;
 }
 
 html,
@@ -14,6 +19,7 @@ body {
   font-family: "Verdana", "Segoe UI", system-ui, sans-serif;
   font-size: 10px;
   background-color: #2a1a0e;
+  /* single background image - NO REPEAT */
   background-image: url("img/bg2.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,26 +42,33 @@ html::before {
 }
 
 strong {
-  color: var(--accent-warm-terracotta);
+  color: #8b3a2a;
+  font-weight: bold;
 }
 em {
-  color: var(--accent-soft-blush);
+  color: #a85c4a;
+  font-style: italic;
 }
 u {
-  color: var(--accent-warm-terracotta);
+  color: #8b3a2a;
 }
 a {
-  color: var(--accent-warm-terracotta);
+  color: #b8654a;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 a:hover {
-  color: var(--accent-golden-honey);
+  color: #d97a5a;
   text-decoration: underline;
 }
 
-/* Home button - warm honey/golden tone */
+/* general text */
+p, li, span, div {
+  color: var(--text-dark);
+}
+
+/* Home button */
 .home-button {
   position: fixed;
   bottom: 25px;
@@ -97,7 +110,6 @@ a:hover {
   max-width: 900px;
   height: 770px;
   margin: 30px auto;
-  /* warm shadow */
   box-shadow: 0 10px 30px var(--shadow-warm);
   border-radius: 20px;
 }
@@ -113,7 +125,7 @@ a:hover {
   top: 20px;
   left: 40px;
   width: 130px;
-  background: rgba(255, 248, 210, 0.92);
+  background: rgba(255, 248, 210, 0.95);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 3px 8px rgba(0,0,0,0.1);
@@ -125,7 +137,8 @@ a:hover {
 .post-it p {
   margin: 5px 0;
   font-size: 10px;
-  color: #8b6b4a;
+  color: #3a2a1a;
+  font-weight: 500;
 }
 
 .white-box {
@@ -134,7 +147,7 @@ a:hover {
   width: 500px;
   height: 100px;
   overflow: hidden;
-  background: rgba(255, 252, 240, 0.85);
+  background: rgba(255, 252, 240, 0.92);
   border-radius: 12px;
   padding: 8px 15px;
   box-shadow: 0 2px 8px var(--shadow-warm);
@@ -145,8 +158,14 @@ a:hover {
   font-weight: bold;
   letter-spacing: 1px;
   border-bottom: 3px dotted var(--accent-soft-blush);
-  color: var(--accent-warm-terracotta);
+  color: #8b3a2a;
   font-family: "Georgia", serif;
+}
+
+.content p {
+  font-size: 11px;
+  color: var(--text-dark);
+  font-weight: 500;
 }
 
 .notebook {
@@ -161,21 +180,21 @@ a:hover {
   padding-right: 84px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-soft-blush) #f0e0c8;
-  background: rgba(255, 252, 240, 0.7);
+  background: rgba(255, 252, 240, 0.85);
   border-radius: 8px;
 }
 
 .notebook > .wrapper p {
   line-height: 16.2px;
   margin-bottom: 16.5px;
-  font-size: 10.5px;
-  color: #4a3a2a;
+  font-size: 11px;
+  color: var(--text-dark);
 }
 
 .page-title {
   font-size: 24px;
   padding-bottom: 6px;
-  color: var(--accent-warm-terracotta);
+  color: #8b3a2a;
   font-weight: bold;
   border-bottom: 2px dotted var(--accent-soft-blush);
   margin-bottom: 15px;
@@ -189,11 +208,17 @@ a:hover {
   overflow: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-golden-honey) #f5e6c8;
-  background: rgba(255, 250, 210, 0.88);
+  background: rgba(255, 250, 210, 0.92);
   border-radius: 8px;
   padding: 10px;
   box-shadow: -2px 3px 10px var(--shadow-warm);
   transform: rotate(1deg);
+}
+
+.yellow-note p,
+.yellow-note li {
+  color: #3a2a1a;
+  font-size: 10px;
 }
 
 .subtitle {
@@ -203,7 +228,7 @@ a:hover {
   border-bottom: 2px dotted var(--accent-soft-blush);
   margin-bottom: 10px;
   margin-top: 15px;
-  color: var(--accent-warm-terracotta);
+  color: #8b3a2a;
 }
 
 ul.pixelbullets {
@@ -214,13 +239,14 @@ ul.pixelbullets {
 ul.pixelbullets li {
   margin: 8px 0;
   font-size: 10px;
+  color: var(--text-dark);
 }
 
 .footer {
   text-align: center;
 }
 
-/* scrollbar styling - warm tones */
+/* scrollbar styling */
 .yellow-note::-webkit-scrollbar {
   width: 8px;
 }
@@ -253,12 +279,7 @@ ul.pixelbullets li {
   background-color: #fff3c9;
   padding: 5px;
   border-radius: 8px;
-}
-
-/* additional warm text styling */
-.content p {
-  font-size: 11px;
-  color: #5a4a3a;
+  color: var(--text-dark);
 }
 
 /* responsive adjustments */

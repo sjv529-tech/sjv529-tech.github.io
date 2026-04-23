@@ -1,61 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My title here!</title>
+    <title>📖 about me ✧ ella</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <style>
+        .about-content p {
+            margin-bottom: 15px;
+        }
+        .heart-icon {
+            display: inline-block;
+            animation: heartbeat 1.5s ease infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .languages-list li {
+            background: var(--accent-soft-blush);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .birthday-badge {
+            display: inline-block;
+            background: var(--accent-golden-honey);
+            color: #fff8ed;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">🏠 back to corkboard</a>
+    
     <div class="container">
-  <div class="post-it">
-    <p>hello! this is a little post-it-note!</p>
-    <p>you can write whatever you want here!</p>
-  </div>
-  <div class="white-box">
-    <div class="title">Kawaii Notebook</div>
-    <div class="content">
-      <p>Here's a box with some more space, maybe for a title? Or blinkies? I think blinkies :) Lalalalala.</p>
+        <div class="post-it">
+            <p>✧ get to know me! ✧</p>
+            <p>nice to meet you ♡</p>
+        </div>
+        <div class="white-box">
+            <div class="title">📖 About Me</div>
+            <div class="content">
+                <p>hi! welcome to my little corner of the internet ~</p>
+            </div>
+        </div>
+        <div class="notebook">
+            <div class="wrapper about-content">
+                <div class="page-title">who am i? <span class="heart-icon">💗</span></div>
+                
+                <p>hello! i'm <strong>ella</strong>, a first-year Computer Science student at the <strong>University of York</strong>. i'm passionate about data engineering and resource management, and i'm always excited to learn something new.</p>
+                
+                <div class="birthday-badge">🎂 birthday: april 25th (taurus season!)</div>
+                
+                <p><strong>🗣️ languages i speak:</strong></p>
+                <ul class="languages-list">
+                    <li>🇬🇧 English</li>
+                    <li>🇨🇳 Chinese</li>
+                    <li>🇭🇰 Cantonese</li>
+                    <li>🇵🇹 Portuguese</li>
+                </ul>
+                
+                <p><strong>🎓 what i'm studying:</strong> i'm in my first year of Computer Science, and i'm particularly drawn to <strong>data engineering</strong> and <strong>resource management</strong>. i love the problem-solving aspect of working with large datasets and figuring out how to optimise systems for efficiency. there's something really satisfying about making things run smoothly behind the scenes!</p>
+                
+                <p><strong>💫 my biggest hobby:</strong> picking up new hobbies! i genuinely love learning for the sake of learning. whether it's coding, languages, crafts, or random skills, i get excited about diving into something i've never tried before. this semester alone i've dabbled in crochet, digital art, and even a bit of video editing. ask me next month and i'll probably have three more new interests!</p>
+                
+                <p><strong>✨ why computer science?</strong> i love how cs combines logic with creativity. there's always more to learn, new problems to solve, and better ways to do things. data engineering and resource management appeal to me because they're about making things work better — optimising, organising, and finding patterns in chaos.</p>
+                
+                <p><strong>🎧 random facts about me:</strong></p>
+                <ul class="pixelbullets">
+                    <li>i'm a taurus (april 25th!) — stubborn but loyal ✨</li>
+                    <li>my hands are double jointed and can crack very concerningly</li>
+                    <li>i have stayed the same weight since 15</li>
+                    <li>i drink way too much tea while coding</li>
+                    <li>i have a strong love for extreme sports</li>
+                </ul>
+                
+                <p>thanks for stopping by my little website. feel free to <a href="message.html">send me a message</a> - i'd love to hear from you, whether it's about cs, language learning, or just to say hi!</p>
+                
+                <p>with love,<br>ella <span class="heart-icon">🌸</span></p>
+            </div>
+        </div>
+        <div class="yellow-note">
+            <div class="wrapper">
+                <div class="subtitle">navigation</div>
+                <ul class="pixelbullets">
+                    <li><a href="index.html">🏠 home</a></li>
+                    <li><a href="about.html">📖 about</a></li>
+                    <li><a href="projects.html">✨ projects</a></li>
+                    <li><a href="message.html">✉️ message</a></li>
+                    <li><a href="sitemap.html">🗺️ sitemap</a></li>
+                </ul>
+                <div class="subtitle">✨ about this page</div>
+                <p>this is where you learn all about me — my studies, my languages, and my ever-growing list of hobbies!</p>
+                <div class="subtitle">contact me</div>
+                <p>want to chat about cs, languages, or just life? head to the <a href="message.html">message me</a> page!</p>
+                <div class="subtitle">fun fact</div>
+                <p>april 25th is also world penguin day! 🐧</p>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="notebook">
-    <div class="wrapper">
-      <div class="page-title">Welcome!</div>
-      <p>This layout is based on <a href="https://www.createblog.com/website-templates/36207-kawaii-collage/preview/URL" target="_blank">'kawaii collage' by sugarpurr</a>. I removed the background and I scaled the image up a bit with an AI tool.</p>
-      <p>Unfortunately, this layout is not responsive and does not look nice on phones :(</p>
-      <p>But it's still super cool!</p>
-      <p><strong>bold</strong> <em>italic</em> <u>underline</u></p>
-      <p class="removeThis">You can find the code to this layout <a href="https://codepen.io/sadness97/pen/poWRGmq" target="_blank">here</a>.</p>
-      <p>Enjoy some catsum ipsum to demonstrate the scrollbar :3</p>
-
-      <p>Catch mouse and gave it as a present kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? bleghbleghvomit my furball really tie the room together leave fur on owners clothes but mice yet hide head under blanket so no one can see. Purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table use lap as chair, for eat all the power cords.</p>
-      <p>Sit on the laptop scratch so owner bleeds for snuggles up to shoulders or knees and purrs you to sleep if human is on laptop sit on the keyboard, yet lick left leg for ninety minutes, still dirty or in the middle of the night i crawl onto your chest and purr gently to help you sleep. Love to play with owner's hair tie hide from vacuum cleaner. Cat dog hate mouse eat string barf pillow no baths hate everything.
-      <p>Meow meow attack the dog then pretend like nothing happened chase little red dot someday it will be mine! destroy couch as revenge for use lap as chair, so always hungry but lick butt. Be a nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box all day mrow yet catching very fast laser pointer. Carrying out surveillance on the neighbour's dog. Sleeps on my head waffles, so pet me pet me don't pet me so stand with legs in litter box, but poop outside check cat door for ambush 10 times before coming in for hack up furballs, curl into a furry donut. Touch water with paw then recoil in horror. Cats are the world.</p>
-      </p>
-    </div>
-  </div>
-  <div class="yellow-note">
-    <div class="wrapper">
-      <div class="subtitle">Navigation</div>
-      <ul class="pixelbullets">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <div class="subtitle">Section</div>
-      <p>You can put whatever you like here! Buttons, blinkies, text, images, anything!</p>
-
-      <div class="subtitle">Section</div>
-      <p>Another section!? How generous!</p>
-
-      <div class="subtitle">More Catsum</div>
-      <p>Meow meow attack the dog then pretend like nothing happened chase little red dot someday it will be mine! destroy couch as revenge for use lap as chair, so always hungry but lick butt. Be a nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box all day mrow yet catching very fast laser pointer.</p>
-      <p>Carrying out surveillance on the neighbour's dog. Sleeps on my head waffles, so pet me pet me don't pet me so stand with legs in litter box, but poop outside check cat door for ambush 10 times before coming in for hack up furballs, curl into a furry donut. Touch water with paw then recoil in horror. Cats are the world.</p>
-    </div>
-  </div>
-</div>
-  </body>
+</body>
 </html>
