@@ -105,8 +105,9 @@ html, body {
 /* FIXED POSITIONS FOR EACH IMAGE */
 #about-link {
     top: 611.7px;
-    left: 613.1px;
-    width: 200px;
+    left: 713.1px;
+    width: 400px;
+    height: 400px;
     transform: rotate(-3deg);
 }
 
@@ -140,7 +141,7 @@ html, body {
 
 #resources-link {
     top: 117.2px;
-    left: 448.4px;
+    left: 648.4px;
     width: 155.5px;
     transform: rotate(3deg);
 }
