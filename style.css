@@ -27,6 +27,31 @@ a {
   text-decoration: none;
 }
 
+/* Home button styles */
+.home-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-light);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-button:hover {
+  transform: scale(1.05);
+  background: var(--accent-dark);
+}
+
 .wrapper {
   padding: 20px;
 }
@@ -68,8 +93,8 @@ a {
   height: 450px;
   width: 380px;
   padding-right: 84px;
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #000 #c4c4c4; /* scroll thumb and track */
+  scrollbar-width: thin;
+  scrollbar-color: #000 #c4c4c4;
 }
 .notebook > .wrapper p {
   line-height: 16.2px;
@@ -81,8 +106,8 @@ a {
   width: 180px;
   height: 550px;
   overflow: auto;
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: #e8d866 #d6ca71; /* scroll thumb and track */
+  scrollbar-width: thin;
+  scrollbar-color: #e8d866 #d6ca71;
 }
 .title {
   font-size: 35px;
@@ -116,26 +141,26 @@ ul.pixelbullets {
 }
 
 .yellow-note::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 .yellow-note::-webkit-scrollbar-track {
-  background: #e8d866; /* color of the tracking area */
+  background: #e8d866;
 }
 
 .yellow-note::-webkit-scrollbar-thumb {
-  background-color: #d6ca71; /* color of the scroll thumb */
+  background-color: #d6ca71;
 }
 .notebook > .wrapper::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 12px;
 }
 
 .notebook > .wrapper::-webkit-scrollbar-track {
-  background: #c4c4c4;; /* color of the tracking area */
+  background: #c4c4c4;;
 }
 
 .notebook > .wrapper::-webkit-scrollbar-thumb {
-  background-color:  #000; /* color of the scroll thumb */
+  background-color:  #000;
 }
 .removeThis {
   background-color:yellow;

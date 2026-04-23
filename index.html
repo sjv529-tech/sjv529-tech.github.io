@@ -9,10 +9,9 @@
 <body>
     <div class="main-board">
 
-        <!-- ABOUT ME link -->
         <a href="about.html" class="pin-item" id="about-link">
             <span class="pin-image-wrapper">
-                <img src="img/me.png" class="pin-image" id="aboutImg" alt="about me" onerror="this.src='https://placehold.co/200x200/ff69b4/white?text=ABOUT'">
+                <img src="img/me.png" class="pin-image" alt="about me" onerror="this.src='https://placehold.co/200x200/ff69b4/white?text=ABOUT'">
             </span>
             <span class="pin-label">about me</span>
         </a>
@@ -31,11 +30,12 @@
             <span class="pin-label">projects</span>
         </a>
 
-        <a href="shrines.html" class="pin-item" id="shrines-link">
+        <!-- Shrines link now goes to sitemap -->
+        <a href="sitemap.html" class="pin-item" id="shrines-link">
             <span class="pin-image-wrapper">
-                <img src="img/tigr.png" class="pin-image" alt="shrines" onerror="this.src='https://placehold.co/244x200/lightyellow/white?text=SHRINES'">
+                <img src="img/tigr.png" class="pin-image" alt="sitemap" onerror="this.src='https://placehold.co/244x200/lightyellow/white?text=SITEMAP'">
             </span>
-            <span class="pin-label">shrines</span>
+            <span class="pin-label">site map</span>
         </a>
 
         <a href="message.html" class="pin-item" id="message-link">
@@ -58,57 +58,6 @@
             </span>
             <span class="pin-label">interests</span>
         </a>
-    <!--
-        <a href="photos.html" class="pin-item" id="photos-link">
-            <span class="pin-image-wrapper">
-                <img src="YOUR-PHOTOS-IMAGE.png" class="pin-image" alt="photos" onerror="this.src='https://placehold.co/150x200/lightgray/white?text=PHOTOS'">
-            </span>
-            <span class="pin-label">photos</span>
-        </a>
-
-        <a href="contact.html" class="pin-item" id="contact-link">
-            <span class="pin-image-wrapper">
-                <img src="YOUR-CONTACT-IMAGE.png" class="pin-image" alt="contact" onerror="this.src='https://placehold.co/120x200/lightgray/white?text=CONTACT'">
-            </span>
-            <span class="pin-label">contact</span>
-        </a>
-    -->
     </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var aboutImage = document.getElementById('aboutImg');
-        var originalSrc = 'img/me.png'; // hardcode this instead of reading .src
-
-        var imageMap = {
-            'about-link': 'img/me.png',
-            'devlog-link': 'img/devlog.png',
-            'projects-link': 'img/misoguy.png',
-            'shrines-link': 'img/tigr.png',
-            'message-link': 'img/greenman.png',
-            'resources-link': 'img/cookie_face.png',
-            'interests-link': 'img/teddy.png',
-            'photos-link': 'YOUR-PHOTOS-IMAGE.png',
-            'contact-link': 'YOUR-CONTACT-IMAGE.png'
-        };
-
-        var links = document.getElementsByClassName('pin-item');
-
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            var newImage = imageMap[link.id];
-
-            link.onmouseenter = (function(img) {
-                return function() {
-                    if (img) aboutImage.src = img;
-                };
-            })(newImage);
-
-            link.onmouseleave = function() {
-                aboutImage.src = originalSrc;
-            };
-        }
-    });
-</script>
 </body>
 </html>

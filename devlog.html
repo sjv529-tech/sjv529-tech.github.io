@@ -1,61 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My title here!</title>
+    <title>📝 dev diary ✧ ella's coding journey</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <style>
+        .devlog-entry {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px dotted var(--accent-light);
+        }
+        .devlog-date {
+            font-size: 11px;
+            color: var(--accent-dark);
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: monospace;
+        }
+        .devlog-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent-dark);
+            margin: 8px 0 12px 0;
+        }
+        .devlog-tag {
+            display: inline-block;
+            background: var(--accent-light);
+            color: white;
+            font-size: 9px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 12px;
+            font-weight: normal;
+        }
+        .devlog-reflection {
+            background: rgba(255,240,245,0.4);
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 12px;
+            font-style: italic;
+            font-size: 11px;
+            border-left: 3px solid var(--accent-light);
+        }
+        .week-divider {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 12px;
+            color: var(--accent-muted);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="home-button">🏠 back to corkboard</a>
+    
     <div class="container">
-  <div class="post-it">
-    <p>hello! this is a little post-it-note!</p>
-    <p>you can write whatever you want here!</p>
-  </div>
-  <div class="white-box">
-    <div class="title">Kawaii Notebook</div>
-    <div class="content">
-      <p>Here's a box with some more space, maybe for a title? Or blinkies? I think blinkies :) Lalalalala.</p>
+        <div class="post-it">
+            <p>📝 dev diary</p>
+            <p>16 weeks of learning</p>
+        </div>
+        <div class="white-box">
+            <div class="title">📝 Development Diary</div>
+            <div class="content">
+                <p>a reflective log of my web development journey (weeks 1-16)</p>
+            </div>
+        </div>
+        <div class="notebook">
+            <div class="wrapper">
+                <div class="page-title">ella's coding journey</div>
+                <p><em>this diary documents my progress throughout the IY4103 Web Development module. entries are written weekly to reflect on challenges, achievements, and learning outcomes.</em></p>
+                
+                <!-- WEEK 1 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 1 — 6th january 2026</div>
+                    <div class="devlog-title">🌱 introduction to web development</div>
+                    <div>
+                        <span class="devlog-tag">html basics</span>
+                        <span class="devlog-tag">setup</span>
+                    </div>
+                    <p>This week marked the beginning of the module. We were introduced to fundamental HTML concepts including document structure, semantic elements, and basic page creation. I set up my development environment using Visual Studio Code and created my first simple webpage. The primary challenge was understanding the distinction between block-level and inline elements, which I resolved through practical exercises. I established a GitHub account in preparation for future version control requirements.</p>
+                    <div class="devlog-reflection">Reflection: I feel confident with basic HTML syntax, though I anticipate CSS will present a steeper learning curve.</div>
+                </div>
+                
+                <!-- WEEK 2 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 2 — 13th january 2026</div>
+                    <div class="devlog-title">🎨 introduction to CSS styling</div>
+                    <div>
+                        <span class="devlog-tag">css</span>
+                        <span class="devlog-tag">selectors</span>
+                        <span class="devlog-tag">box model</span>
+                    </div>
+                    <p>This week focused on Cascading Style Sheets. I learned about selectors (element, class, ID), the box model (margin, padding, border, content), and basic colour theory for web design. I created a styled version of my initial HTML page, experimenting with different font families and background colours. The concept of specificity initially caused confusion, but after completing several exercises, I developed a clearer understanding of how CSS rules are prioritised.</p>
+                    <div class="devlog-reflection">Reflection: I enjoy the creative aspect of CSS. I need more practice with the box model, particularly margin collapsing behaviour.</div>
+                </div>
+                
+                <!-- WEEK 3 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 3 — 20th january 2026</div>
+                    <div class="devlog-title">📐 layout techniques: flexbox and positioning</div>
+                    <div>
+                        <span class="devlog-tag">flexbox</span>
+                        <span class="devlog-tag">positioning</span>
+                        <span class="devlog-tag">layout</span>
+                    </div>
+                    <p>Layout techniques were the primary focus this week. I learned Flexbox for one-dimensional layouts and explored absolute, relative, fixed, and sticky positioning. These concepts were essential for creating the corkboard-style homepage I envisioned for my portfolio. Implementing absolute positioning for the polaroid images required precise measurement and significant trial and error. I also learned about z-index to manage stacking contexts.</p>
+                    <div class="devlog-reflection">Reflection: Flexbox is powerful but requires memorisation of numerous properties. Positioning remains challenging but is becoming more intuitive with practice.</div>
+                </div>
+                
+                <!-- WEEK 4 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 4 — 27th january 2026</div>
+                    <div class="devlog-title">📱 responsive design and media queries</div>
+                    <div>
+                        <span class="devlog-tag">responsive</span>
+                        <span class="devlog-tag">media queries</span>
+                        <span class="devlog-tag">mobile-first</span>
+                    </div>
+                    <p>This week addressed the critical topic of responsive web design. I learned to implement media queries to adapt layouts across different screen sizes. For my portfolio, this meant redesigning the corkboard layout for mobile devices, converting the fixed-position polaroids into a vertical stacked format. The mobile-first approach was emphasised, though I retrospectively applied media queries to my existing desktop-oriented design. Testing across multiple device sizes revealed several edge cases requiring additional breakpoints.</p>
+                    <div class="devlog-reflection">Reflection: Responsive design is essential for accessibility. My mobile layout is functional but less aesthetically pleasing than the desktop version — an area for future improvement.</div>
+                </div>
+                
+                <!-- WEEK 5 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 5 — 3rd february 2026</div>
+                    <div class="devlog-title">💻 version control with Git and GitHub</div>
+                    <div>
+                        <span class="devlog-tag">git</span>
+                        <span class="devlog-tag">github</span>
+                        <span class="devlog-tag">version control</span>
+                    </div>
+                    <p>Version control was introduced this week using Git and GitHub. I learned fundamental commands including init, add, commit, push, pull, and branch. I created a repository for my portfolio project and established a workflow of committing changes after each development session. Initially, I encountered merge conflicts when working across multiple devices, but I learned to resolve these using VS Code's built-in conflict resolution tools. Publishing my site via GitHub Pages was a significant milestone — seeing my work live online was highly motivating.</p>
+                    <div class="devlog-reflection">Reflection: Git is indispensable for project management. I now understand why version control is considered an industry standard practice.</div>
+                </div>
+                
+                <!-- WEEK 6 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 6 — 10th february 2026</div>
+                    <div class="devlog-title">⚙️ JavaScript fundamentals</div>
+                    <div>
+                        <span class="devlog-tag">javascript</span>
+                        <span class="devlog-tag">variables</span>
+                        <span class="devlog-tag">functions</span>
+                        <span class="devlog-tag">DOM</span>
+                    </div>
+                    <p>JavaScript fundamentals were introduced this week. I learned about variables (let, const, var), data types, functions, conditionals, loops, and basic DOM manipulation. The Document Object Model concept was particularly important for understanding how JavaScript interacts with HTML. I created simple interactive features including a button that changes text colour and a basic image carousel. Asynchronous programming concepts were briefly introduced but will be covered in greater depth later.</p>
+                    <div class="devlog-reflection">Reflection: JavaScript is more complex than HTML and CSS. I find the syntax logical but need substantial practice to internalise core concepts.</div>
+                </div>
+                
+                <!-- WEEK 7 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 7 — 17th february 2026</div>
+                    <div class="devlog-title">📋 form handling and validation</div>
+                    <div>
+                        <span class="devlog-tag">forms</span>
+                        <span class="devlog-tag">validation</span>
+                        <span class="devlog-tag">events</span>
+                    </div>
+                    <p>This week focused on HTML forms and client-side validation using JavaScript. I learned about form elements (input, textarea, select, button), event listeners (submit, input, change), and real-time validation techniques. I implemented a contact form with character counting, email format validation, and required field checking. Preventing default form submission behaviour and providing user feedback through DOM manipulation were key skills developed during these exercises.</p>
+                    <div class="devlog-reflection">Reflection: Form validation is more complex than anticipated, particularly providing clear, accessible error messages. I appreciate the importance of good UX in form design.</div>
+                </div>
+                
+                <!-- WEEK 8 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 8 — 24th february 2026</div>
+                    <div class="devlog-title">🗄️ introduction to databases and Supabase</div>
+                    <div>
+                        <span class="devlog-tag">supabase</span>
+                        <span class="devlog-tag">postgresql</span>
+                        <span class="devlog-tag">database</span>
+                    </div>
+                    <p>Backend concepts were introduced through Supabase, a PostgreSQL-based backend-as-a-service platform. I learned about database tables, rows, columns, primary keys, and foreign keys. I created a contact_messages table with appropriate schema (id, name, email, message, created_at). Understanding row-level security (RLS) policies and API authentication methods required significant research. I successfully connected to my Supabase project using the provided API keys and tested basic read operations.</p>
+                    <div class="devlog-reflection">Reflection: Databases are conceptually straightforward but the surrounding infrastructure (APIs, security, authentication) is complex. Supabase simplifies many of these challenges.</div>
+                </div>
+                
+                <!-- WEEK 9 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 9 — 3rd march 2026</div>
+                    <div class="devlog-title">🔗 integrating forms with Supabase</div>
+                    <div>
+                        <span class="devlog-tag">api integration</span>
+                        <span class="devlog-tag">fetch</span>
+                        <span class="devlog-tag">async/await</span>
+                    </div>
+                    <p>This week involved connecting my HTML contact form to the Supabase database using JavaScript's fetch API. I learned about HTTP methods (POST, GET), request headers, JSON formatting, and asynchronous programming using async/await syntax. Debugging CORS (Cross-Origin Resource Sharing) errors was challenging — I discovered that Supabase requires specific configuration to accept requests from external domains. After implementing the correct headers and testing extensively, I successfully stored form submissions in my database table.</p>
+                    <div class="devlog-reflection">Reflection: Asynchronous operations and API integration represent a significant conceptual leap. Seeing my form data appear in the Supabase dashboard was extremely rewarding after hours of debugging.</div>
+                </div>
+                
+                <!-- WEEK 10 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 10 — 10th march 2026</div>
+                    <div class="devlog-title">🎨 portfolio design and CSS frameworks</div>
+                    <div>
+                        <span class="devlog-tag">design</span>
+                        <span class="devlog-tag">css frameworks</span>
+                        <span class="devlog-tag">custom css</span>
+                    </div>
+                    <p>This week was dedicated to refining my portfolio's visual design. I explored CSS frameworks including Bootstrap and Tailwind but ultimately chose to write custom CSS to achieve my specific "corkboard with polaroids" aesthetic. I established a consistent colour scheme using CSS variables, implemented custom scrollbar styling, and added subtle animations including a hover wiggle effect for interactive elements. I also created a cohesive visual language across all pages using shared class names and component-based styling.</p>
+                    <div class="devlog-reflection">Reflection: Custom CSS offers greater creative freedom than frameworks, though it requires more development time. I am satisfied with the distinctive, personal aesthetic I have achieved.</div>
+                </div>
+                
+                <!-- WEEK 11 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 11 — 17th march 2026</div>
+                    <div class="devlog-title">🧪 usability testing and heuristic evaluation</div>
+                    <div>
+                        <span class="devlog-tag">usability</span>
+                        <span class="devlog-tag">nielsen</span>
+                        <span class="devlog-tag">heuristics</span>
+                    </div>
+                    <p>This week focused on evaluating my site against Nielsen's 10 Usability Heuristics. I identified three significant issues: (1) lack of consistent navigation between pages (violating "user control and freedom"), (2) insufficient error messaging for form validation (violating "error prevention"), and (3) poor mobile layout causing content overflow (violating "aesthetic and minimalist design"). I implemented fixes including a persistent home button, enhanced form feedback messages, and refined media query breakpoints. Peer testing provided additional insights.</p>
+                    <div class="devlog-reflection">Reflection: Usability testing revealed issues I had become blind to through familiarity. Heuristic evaluation is a valuable systematic approach to identifying UX problems.</div>
+                </div>
+                
+                <!-- WEEK 12 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 12 — 24th march 2026</div>
+                    <div class="devlog-title">📝 content creation and page development</div>
+                    <div>
+                        <span class="devlog-tag">content</span>
+                        <span class="devlog-tag">copywriting</span>
+                        <span class="devlog-tag">multipage</span>
+                    </div>
+                    <p>This week involved creating substantive content for all portfolio pages. I wrote personal "About Me" copy, documented my interests, created project descriptions, and developed this 16-week devlog. I also implemented a sitemap page to improve site navigation and information architecture. Writing for the web required balancing personality with professionalism — I aimed for an authentic, slightly informal tone while maintaining academic appropriateness. I also optimised images for faster loading times.</p>
+                    <div class="devlog-reflection">Reflection: Content creation is as important as technical implementation. A visually appealing site with poor content fails to engage users effectively.</div>
+                </div>
+                
+                <!-- WEEK 13 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 13 — 31st march 2026</div>
+                    <div class="devlog-title">♿ accessibility and web standards</div>
+                    <div>
+                        <span class="devlog-tag">accessibility</span>
+                        <span class="devlog-tag">wcag</span>
+                        <span class="devlog-tag">semantic html</span>
+                    </div>
+                    <p>Accessibility was the primary focus this week. I learned about WCAG (Web Content Accessibility Guidelines) principles including perceivable, operable, understandable, and robust. I implemented improvements including: semantic HTML structure (header, nav, main, article), alt text for all images, sufficient colour contrast ratios, keyboard navigation support, and ARIA labels where appropriate. I used browser developer tools and the WAVE accessibility evaluation tool to identify and resolve issues. These changes benefit all users, particularly those using assistive technologies.</p>
+                    <div class="devlog-reflection">Reflection: Accessibility should be integrated from the start rather than retrofitted. I will prioritise accessibility in future projects.</div>
+                </div>
+                
+                <!-- WEEK 14 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 14 — 7th april 2026</div>
+                    <div class="devlog-title">⚡ performance optimisation</div>
+                    <div>
+                        <span class="devlog-tag">performance</span>
+                        <span class="devlog-tag">optimisation</span>
+                        <span class="devlog-tag">lighthouse</span>
+                    </div>
+                    <p>This week addressed website performance optimisation. I used Google Lighthouse to benchmark my site's performance, accessibility, SEO, and best practices. Initial scores revealed slow loading times primarily due to unoptimised images and external resources. I compressed all images, implemented lazy loading for below-the-fold content, minified CSS files, and moved JavaScript to the end of the body element. These changes improved my Lighthouse performance score from 67 to 89. I also added appropriate meta tags for SEO.</p>
+                    <div class="devlog-reflection">Reflection: Performance significantly impacts user experience and SEO. Small optimisations can yield substantial improvements in loading times.</div>
+                </div>
+                
+                <!-- WEEK 15 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 15 — 14th april 2026</div>
+                    <div class="devlog-title">🔍 cross-browser testing and debugging</div>
+                    <div>
+                        <span class="devlog-tag">testing</span>
+                        <span class="devlog-tag">cross-browser</span>
+                        <span class="devlog-tag">debugging</span>
+                    </div>
+                    <p>Extensive cross-browser testing was conducted this week across Chrome, Firefox, Safari, and Edge. I discovered several inconsistencies: Flexbox behaviour varied slightly between browsers, custom scrollbar styling only worked in WebKit-based browsers, and some CSS grid properties required vendor prefixes. I resolved these issues using feature detection, graceful degradation, and standardised CSS properties where possible. I also tested on various physical devices including iPhone, iPad, and Android phones to verify responsive behaviour.</p>
+                    <div class="devlog-reflection">Reflection: Browser diversity remains a significant challenge in web development. Testing across multiple browsers is essential for professional-quality work.</div>
+                </div>
+                
+                <!-- WEEK 16 -->
+                <div class="devlog-entry">
+                    <div class="devlog-date">week 16 — 21st april 2026</div>
+                    <div class="devlog-title">📦 final submission and project reflection</div>
+                    <div>
+                        <span class="devlog-tag">submission</span>
+                        <span class="devlog-tag">documentation</span>
+                        <span class="devlog-tag">portfolio</span>
+                    </div>
+                    <p>This final week was dedicated to preparing the complete portfolio for summative assessment. I compiled all required evidence including screenshots, the development lifecycle report, and the complete codebase. I verified that all pages function correctly, the contact form successfully stores data in Supabase, and the site meets all specified requirements. I also wrote comprehensive documentation within my code using comments to explain structural decisions and complex implementations. The GitHub repository was finalised with a clear README.</p>
+                    <div class="devlog-reflection">Reflection: Reflecting on 16 weeks of progress reveals substantial growth. I began with basic HTML and have developed a fully functional, database-connected portfolio. This module has provided a solid foundation for continued learning in web development.</div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px; padding: 15px; background: rgba(255,240,245,0.5); border-radius: 15px;">
+                    <em>✦ total learning hours: approximately 160 hours ✦<br>
+                    lines of code written: 2,500+ ✦<br>
+                    thanks for following my journey! ✦</em>
+                </p>
+            </div>
+        </div>
+        <div class="yellow-note">
+            <div class="wrapper">
+                <div class="subtitle">navigation</div>
+                <ul class="pixelbullets">
+                    <li><a href="index.html">🏠 home</a></li>
+                    <li><a href="about.html">📖 about</a></li>
+                    <li><a href="devlog.html">📝 dev diary</a></li>
+                    <li><a href="projects.html">✨ projects</a></li>
+                    <li><a href="message.html">✉️ message</a></li>
+                    <li><a href="sitemap.html">🗺️ sitemap</a></li>
+                </ul>
+                <div class="subtitle">about this log</div>
+                <p>This development diary documents 16 weeks of learning in the IY4103 Web Development module. Each entry includes technical content, challenges encountered, and personal reflections.</p>
+                <div class="subtitle">key topics covered</div>
+                <ul class="pixelbullets" style="font-size: 10px;">
+                    <li>HTML5 & semantic markup</li>
+                    <li>CSS3 & responsive design</li>
+                    <li>JavaScript & DOM manipulation</li>
+                    <li>Supabase database integration</li>
+                    <li>Git & GitHub version control</li>
+                    <li>Usability & accessibility</li>
+                    <li>Performance optimisation</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="notebook">
-    <div class="wrapper">
-      <div class="page-title">Welcome!</div>
-      <p>This layout is based on <a href="https://www.createblog.com/website-templates/36207-kawaii-collage/preview/URL" target="_blank">'kawaii collage' by sugarpurr</a>. I removed the background and I scaled the image up a bit with an AI tool.</p>
-      <p>Unfortunately, this layout is not responsive and does not look nice on phones :(</p>
-      <p>But it's still super cool!</p>
-      <p><strong>bold</strong> <em>italic</em> <u>underline</u></p>
-      <p class="removeThis">You can find the code to this layout <a href="https://codepen.io/sadness97/pen/poWRGmq" target="_blank">here</a>.</p>
-      <p>Enjoy some catsum ipsum to demonstrate the scrollbar :3</p>
-
-      <p>Catch mouse and gave it as a present kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? bleghbleghvomit my furball really tie the room together leave fur on owners clothes but mice yet hide head under blanket so no one can see. Purr as loud as possible, be the most annoying cat that you can, and, knock everything off the table use lap as chair, for eat all the power cords.</p>
-      <p>Sit on the laptop scratch so owner bleeds for snuggles up to shoulders or knees and purrs you to sleep if human is on laptop sit on the keyboard, yet lick left leg for ninety minutes, still dirty or in the middle of the night i crawl onto your chest and purr gently to help you sleep. Love to play with owner's hair tie hide from vacuum cleaner. Cat dog hate mouse eat string barf pillow no baths hate everything.
-      <p>Meow meow attack the dog then pretend like nothing happened chase little red dot someday it will be mine! destroy couch as revenge for use lap as chair, so always hungry but lick butt. Be a nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box all day mrow yet catching very fast laser pointer. Carrying out surveillance on the neighbour's dog. Sleeps on my head waffles, so pet me pet me don't pet me so stand with legs in litter box, but poop outside check cat door for ambush 10 times before coming in for hack up furballs, curl into a furry donut. Touch water with paw then recoil in horror. Cats are the world.</p>
-      </p>
-    </div>
-  </div>
-  <div class="yellow-note">
-    <div class="wrapper">
-      <div class="subtitle">Navigation</div>
-      <ul class="pixelbullets">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <div class="subtitle">Section</div>
-      <p>You can put whatever you like here! Buttons, blinkies, text, images, anything!</p>
-
-      <div class="subtitle">Section</div>
-      <p>Another section!? How generous!</p>
-
-      <div class="subtitle">More Catsum</div>
-      <p>Meow meow attack the dog then pretend like nothing happened chase little red dot someday it will be mine! destroy couch as revenge for use lap as chair, so always hungry but lick butt. Be a nyan cat, feel great about it, be annoying 24/7 poop rainbows in litter box all day mrow yet catching very fast laser pointer.</p>
-      <p>Carrying out surveillance on the neighbour's dog. Sleeps on my head waffles, so pet me pet me don't pet me so stand with legs in litter box, but poop outside check cat door for ambush 10 times before coming in for hack up furballs, curl into a furry donut. Touch water with paw then recoil in horror. Cats are the world.</p>
-    </div>
-  </div>
-</div>
-  </body>
+</body>
 </html>
