@@ -1,55 +1,88 @@
 :root {
-  --accent-light: #fb90b6;
-  --accent-dark: #c9507a;
-  --accent-muted: #afafaf;
+  --accent-soft-blush: #e8a0b4;
+  --accent-warm-terracotta: #c9826c;
+  --accent-golden-honey: #e2a55e;
+  --accent-cream: #fdf3e0;
+  --accent-warm-taupe: #b5957a;
+  --paper-warm: #fdf8ed;
+  --shadow-warm: rgba(100, 60, 40, 0.15);
 }
 
 html,
 body {
   margin: 0;
-  font-family: "Verdana";
+  font-family: "Verdana", "Segoe UI", system-ui, sans-serif;
   font-size: 10px;
-  background-color: pink;
-  background-image: url("https://sadgrl.online/images/bgs/tile/heartpinkpas.gif");
-}
-strong {
-  color: var(--accent-dark);
-}
-em {
-  color: var(--accent-light);
-}
-u {
-  color: var(--accent-dark);
-}
-a {
-  color: var(--accent-dark);
-  font-weight: bold;
-  text-decoration: none;
+  background-color: #2a1a0e;
+  background-image: url("img/bg2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-/* Home button styles */
-.home-button {
+/* subtle warm vignette */
+html::before {
+  content: "";
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--accent-light);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 50px;
-  font-size: 14px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 55%, rgba(30, 15, 5, 0.4) 100%);
+  z-index: 0;
+}
+
+strong {
+  color: var(--accent-warm-terracotta);
+}
+em {
+  color: var(--accent-soft-blush);
+}
+u {
+  color: var(--accent-warm-terracotta);
+}
+a {
+  color: var(--accent-warm-terracotta);
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: var(--accent-golden-honey);
+  text-decoration: underline;
+}
+
+/* Home button - warm honey/golden tone */
+.home-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent-golden-honey);
+  color: #fff8ed;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px var(--shadow-warm);
   z-index: 1000;
-  transition: transform 0.2s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: "Verdana", sans-serif;
+  border: 1px solid rgba(255, 248, 220, 0.5);
 }
 
 .home-button:hover {
   transform: scale(1.05);
-  background: var(--accent-dark);
+  background: var(--accent-warm-terracotta);
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 6px 14px var(--shadow-warm);
 }
 
 .wrapper {
@@ -58,48 +91,96 @@ a {
 
 .container {
   position: relative;
-  content: "";
   background-image: url("https://sadgrl.online/images/lyts/not-mine/notebook-collage.png");
   background-repeat: no-repeat;
-  height: 100%;
+  background-size: contain;
   max-width: 900px;
   height: 770px;
-  margin: 0 auto;
+  margin: 30px auto;
+  /* warm shadow */
+  box-shadow: 0 10px 30px var(--shadow-warm);
+  border-radius: 20px;
 }
+
 .post-it,
 .white-box,
 .notebook,
 .yellow-note {
   position: absolute;
 }
+
 .post-it {
   top: 20px;
   left: 40px;
   width: 130px;
+  background: rgba(255, 248, 210, 0.92);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.1);
+  font-family: "Comic Neue", cursive;
+  transform: rotate(-2deg);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
+
+.post-it p {
+  margin: 5px 0;
+  font-size: 10px;
+  color: #8b6b4a;
+}
+
 .white-box {
   top: 20px;
   left: 180px;
   width: 500px;
   height: 100px;
   overflow: hidden;
+  background: rgba(255, 252, 240, 0.85);
+  border-radius: 12px;
+  padding: 8px 15px;
+  box-shadow: 0 2px 8px var(--shadow-warm);
 }
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-bottom: 3px dotted var(--accent-soft-blush);
+  color: var(--accent-warm-terracotta);
+  font-family: "Georgia", serif;
+}
+
 .notebook {
   top: 172px;
   left: 145px;
 }
+
 .notebook > .wrapper {
   overflow: auto;
   height: 450px;
   width: 380px;
   padding-right: 84px;
   scrollbar-width: thin;
-  scrollbar-color: #000 #c4c4c4;
+  scrollbar-color: var(--accent-soft-blush) #f0e0c8;
+  background: rgba(255, 252, 240, 0.7);
+  border-radius: 8px;
 }
+
 .notebook > .wrapper p {
   line-height: 16.2px;
   margin-bottom: 16.5px;
+  font-size: 10.5px;
+  color: #4a3a2a;
 }
+
+.page-title {
+  font-size: 24px;
+  padding-bottom: 6px;
+  color: var(--accent-warm-terracotta);
+  font-weight: bold;
+  border-bottom: 2px dotted var(--accent-soft-blush);
+  margin-bottom: 15px;
+}
+
 .yellow-note {
   left: 640px;
   top: 160px;
@@ -107,61 +188,96 @@ a {
   height: 550px;
   overflow: auto;
   scrollbar-width: thin;
-  scrollbar-color: #e8d866 #d6ca71;
+  scrollbar-color: var(--accent-golden-honey) #f5e6c8;
+  background: rgba(255, 250, 210, 0.88);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: -2px 3px 10px var(--shadow-warm);
+  transform: rotate(1deg);
 }
-.title {
-  font-size: 35px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-bottom: 3px dotted var(--accent-muted);
-  color: var(--accent-dark);
-}
-.content {
-}
+
 .subtitle {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
-  border-bottom: 3px dotted var(--accent-muted);
+  border-bottom: 2px dotted var(--accent-soft-blush);
   margin-bottom: 10px;
-  color: var(--accent-dark);
+  margin-top: 15px;
+  color: var(--accent-warm-terracotta);
 }
+
 ul.pixelbullets {
   list-style-image: url("https://sadgrl.online/images/lyts/not-mine/hearth_rosa.gif");
   padding-left: 25px;
 }
-.page-title {
-  font-size: 25px;
-  padding-bottom: 4px;
-  color: var(--accent-dark);
-  font-weight: bold;
-}
-.footer {
-  text-align:center;
+
+ul.pixelbullets li {
+  margin: 8px 0;
+  font-size: 10px;
 }
 
+.footer {
+  text-align: center;
+}
+
+/* scrollbar styling - warm tones */
 .yellow-note::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 .yellow-note::-webkit-scrollbar-track {
-  background: #e8d866;
+  background: #f5e6c8;
+  border-radius: 10px;
 }
 
 .yellow-note::-webkit-scrollbar-thumb {
-  background-color: #d6ca71;
+  background-color: var(--accent-golden-honey);
+  border-radius: 10px;
 }
+
 .notebook > .wrapper::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 .notebook > .wrapper::-webkit-scrollbar-track {
-  background: #c4c4c4;;
+  background: #f0e0c8;
+  border-radius: 10px;
 }
 
 .notebook > .wrapper::-webkit-scrollbar-thumb {
-  background-color:  #000;
+  background-color: var(--accent-soft-blush);
+  border-radius: 10px;
 }
+
 .removeThis {
-  background-color:yellow;
+  background-color: #fff3c9;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+/* additional warm text styling */
+.content p {
+  font-size: 11px;
+  color: #5a4a3a;
+}
+
+/* responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    transform: scale(0.9);
+    transform-origin: top center;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    transform: scale(0.85);
+  }
+  .home-button {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 16px;
+    font-size: 10px;
+  }
 }
